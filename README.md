@@ -1,4 +1,4 @@
-##React Netflix Player
-#Player baseado no designer da Netflix
+## React Netflix Player
+# Player baseado no designer da Netflix
 
-Documetação em desenvolvimento
+Documentação em desenvolvimento

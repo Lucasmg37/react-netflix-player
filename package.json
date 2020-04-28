@@ -1,6 +1,6 @@
 {
     "name": "react-netflix-player",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "React Video Player Based in Netflix Design",
     "main": "./dist/ReactNetflixPlayer.js",
     "license": "MIT",
@@ -9,6 +9,10 @@
         "build": "webpack",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Lucasmg37/react-netflix-player.git"
+      },
     "author": "Lucas Junior Dias",
     "peerDependencies": {
         "react": "^16.0.0"

@@ -1,6 +1,5 @@
 // webpack.config.js
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     mode: 'production',
@@ -9,31 +8,31 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'ReactNetflixPlayer.js',
         libraryTarget: 'commonjs2'
-      },
+    },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 include: path.resolve(__dirname, 'src'),
-                exclude: /(node_modules|bower_components|build)/,
+                exclude: /node_modules/,
                 use: {
-                  loader: 'babel-loader',
-                  options: {
-                    presets: ['env']
-                  }
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
                 }
-              },
+            },
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                  'style-loader',
-                  'css-loader',
-                  'sass-loader',
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
                 ],
-              },
+            },
         ]
     },
     externals: {
-        'react': 'commonjs react' 
-      }
+        'react': 'commonjs react'
+    }
 }

@@ -1,11 +1,11 @@
 {
     "name": "react-netflix-player",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "React Video Player Based in Netflix Design",
     "main": "./dist/ReactNetflixPlayer.js",
     "license": "MIT",
     "scripts": {
-        "start": "webpack --watch",
+        "start": "webpack-dev-server --config webpack.config.dev.js",
         "build": "webpack",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -30,7 +30,10 @@
         "sass-loader": "^8.0.2",
         "style-loader": "^1.2.0",
         "webpack": "^4.43.0",
-        "webpack-cli": "^3.2.1"
+        "webpack-cli": "^3.2.1",
+        "webpack-dev-server": "^3.11.0",
+        "node-sass": "^4.14.1",
+        "react-dom": "^16.13.1"
     },
     "dependencies": {
         "react": "^16.0.0",

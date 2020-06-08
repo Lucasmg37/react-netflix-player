@@ -6,13 +6,13 @@
 
 
 <p align="center">
-    <img alt="Shield" src="https://img.shields.io/bundlephobia/min/react-netflix-player?style=for-the-badge"/>
-    <img alt="Shield" src="https://img.shields.io/github/repo-size/lucasmg37/react-netflix-player?style=for-the-badge"/>
-    <img alt="Shield" src="https://img.shields.io/npm/dw/react-netflix-player?style=for-the-badge"/>
-    <img alt="Shield" src="https://img.shields.io/github/issues/lucasmg37/react-netflix-player?style=for-the-badge"/>
-    <img alt="Shield" src="https://img.shields.io/npm/l/react-netflix-player?style=for-the-badge"/>
-    <img alt="Shield" src="https://img.shields.io/github/stars/lucasmg37/react-netflix-player?style=for-the-badge"/>
-    <img alt="Shield" src="https://img.shields.io/github/last-commit/lucasmg37/react-netflix-player?style=for-the-badge"/>    
+    <img alt="Shield" src="https://img.shields.io/bundlephobia/min/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/github/repo-size/lucasmg37/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/npm/dw/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/github/issues/lucasmg37/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/npm/l/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/github/stars/lucasmg37/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/github/last-commit/lucasmg37/react-netflix-player?style=flat-square"/>    
 </p>
 
 ![Anime-List (1)](https://user-images.githubusercontent.com/25160385/80926822-dbfe8c00-8d6f-11ea-8e39-c24ffc6cfb1b.gif)
@@ -25,8 +25,7 @@
  <a href="#page_with_curl-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#page_with_curl-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#page_with_curl-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#page_with_curl-ajude-me-a-desenvolver">Como Desenvolver</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#page_with_curl-autor">Autor</a>
+ <a href="#page_with_curl-ajude-me-a-desenvolver">Como Desenvolver</a>
 </p>
 
 ### 📦 Recursos implementados
@@ -305,12 +304,7 @@ Em pouco tempo você será retornado.
 > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
 
 ## 📝 Licença
+Este projeto esta sobe a licença MIT.
 
-Este projeto esta sobe a licença MIT. Veja a [LICENÇA](license) para saber mais.
 
-### 😎 Autor
-
-| [<img width="120px" src="https://avatars0.githubusercontent.com/u/25160385?s=460&u=ebcea7d6d94724adaea5284286357b1fce500f02&v=4"><br><sub>@lucasmg37</sub>](https://github.com/lucasmg37)|
-| :---: |
-
-Feito com ❤ e ☕ por Lucas Dias. 👋🏽 [Entre em contato!](hhttps://www.linkedin.com/in/lucas-junior/)
+Feito com ❤ e ☕ por Lucas Dias. 👋🏽 [Entre em contato!](https://www.linkedin.com/in/lucas-junior/)

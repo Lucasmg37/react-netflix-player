@@ -1,25 +1,21 @@
-// webpack.config.js
-const path = require('path');
+// webpack.config.dev.js
+const webpack = require('webpack');
 
 module.exports = {
-    mode: 'production',
-    entry: './src/ReactNetflixPlayer.js',
+    devtool: 'eval',
+    entry: {
+        example: ['webpack/hot/dev-server', './example/index.js'],
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'ReactNetflixPlayer.js',
-        libraryTarget: 'commonjs2'
+        filename: 'example/bundle.js'
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                include: path.resolve(__dirname, 'src'),
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
                 }
             },
             {
@@ -32,7 +28,13 @@ module.exports = {
             },
         ]
     },
-    externals: {
-        'react': 'commonjs react'
+    resolve: {
+        extensions: ['.js'],
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
+    devServer: {
+        contentBase: './example'
     }
 }

@@ -1,28 +1,59 @@
-# React Netflix Player
-## Player baseado no designer da Netflix
+# ⚛ React Netflix Player
+##  A React Player based in Netflix Designer
 
-Player de video com as funcionalidades existentes no atual player da Netflix Web.
 
-Componente desenvolvido para projetos react ⚛.
+ℹ Player de video com as funcionalidades existentes no atual player da Netflix Web.
 
+
+<p align="center">
+    <img alt="Shield" src="https://img.shields.io/bundlephobia/min/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/github/repo-size/lucasmg37/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/npm/dw/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/github/issues/lucasmg37/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/npm/l/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/github/stars/lucasmg37/react-netflix-player?style=flat-square"/>
+    <img alt="Shield" src="https://img.shields.io/github/last-commit/lucasmg37/react-netflix-player?style=flat-square"/>    
+</p>
 
 ![Anime-List (1)](https://user-images.githubusercontent.com/25160385/80926822-dbfe8c00-8d6f-11ea-8e39-c24ffc6cfb1b.gif)
 
+<p align=center>
+ <a href="#-recursos-implementados">Recursos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-como-utiliza">Como Utilizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-propriedades">Propriedades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-ajude-me-a-desenvolver">Como Desenvolver</a>
+</p>
 
-### Este player pode abstrair  toda parte de reprodução de vídeos, com os seguites recursos suportados:
+### 📦 Recursos implementados
 
-1. Reprodução de vídeos com loading e Buffer
-2. Listagem de lista de reprodução com marcação do vídeo em atual
-3. Ação para prosseguir para o proxímo item
-4. Ação definida oa fim do vídeo
-5. Recursos de Play/Pause, Avançar/Retroceder e FullScreen
-6. Suporte a múltiplos links de reprodução
-7. Informações da mídia em execução
-5. Sistema de ocultação do controles mediante tempo de espera
-6. Cusomizaçõo de cor (Feature)
-7. Tratamento de erros
+1. Reprodução de vídeos com Loading e Memória temporária;
+2. Listagem de lista de reprodução com marcação do vídeo em atual;
+3. Ação para prosseguir para o próximo item;
+4. Ação definida ao fim do vídeo;
+5. Recursos de Play/Pause, Avançar/Retroceder e FullScreen;
+6. Suporte a múltiplos links de reprodução;
+7. Informações da mídia em execução;
+5. Sistema de ocultação dos controles mediante tempo de espera;
+6. Customização de cor (Feature);
+7. Tratamento de erros.
 
-### Como utilizar
+### 🧱 Tecnologias
+
+No desenvolvimento desse projeto foi ultilizado
+  
+ - [React](https://pt-br.reactjs.org/)
+ 
+ - [Sass](https://sass-lang.com/)
+ 
+ - [Babel](https://babeljs.io/)
+
+ - [Webpack](https://webpack.js.org/)
+
+### ⚙ Como utilizar
 
 Em seu projeto react, execute o comando ```npm install react-netflix-player``` para adicionar o react-netflix-player em seu projeto.
 
@@ -34,11 +65,7 @@ Pronto, seu componente já está pronto para ser utililado, basta criá-lo em se
 
 ```<ReactNetflixPlayer/>```
 
-### Observações
-
-Atualmente o componente não trata propriedades filhas (_props.children_).
-
-## Propriedades
+## 📃 Propriedades
 
 ### src: string | vídeo
 
@@ -77,11 +104,11 @@ Observações: Esse parâmetro não se refere ao modo FullScreen do navegador. S
 
 ### backButton: false
 
-Informa se o botão de voltar será visível quando os controles estiverem ativos, por padrão ele está desativado.
+Informa se o botão de voltar ⬅ será visível quando os controles estiverem ativos, por padrão ele está desativado.
 
 ### autoPlay: false
 
-Informa se o vídeo deverá iniciara automáticamente, por padrão o valor é _false_
+Informa se o vídeo deverá iniciar automáticamente, por padrão o valor é _false_
 
 ### startPosition: 0
 
@@ -157,15 +184,15 @@ Array com as qualidades da mídia em execução.
 Não deve ser implemtado na atual versão do Player
 
 
-## Eventos
+## 🧨 Eventos
 
 ### Erro
 
-Caso ocorra algum erro com o vídeo em execução, será redenizado a informação do erro, com a listagem de outros links, para que o usuário possa tentar reproduzir o vídeo em outra qualidade.
+Caso ocorra algum erro com o vídeo em execução, será renderizado a informação do erro, com a listagem de outros links, para que o usuário possa tentar reproduzir o vídeo em outra qualidade.
 
-O botão de fechar é exibido
+1. O botão de fechar é exibido
 
-A função _onErrorVideo_ será disparada.
+2. A função _onErrorVideo_ será disparada.
 
 ### Controles
 
@@ -179,9 +206,9 @@ Ao mover o mouse, ou executar o play pelo *space* o modo é desativado
 
 ### Loading
 
-Quando o vídeo está a buscando frames para reprodução e não existem frames suficientes o loading é ativado
+Quando o vídeo está  buscando frames para reprodução e não existem frames suficientes o loading é ativado
 
-## Controles
+## 🕹 Controles
 
 ### Double Click
 
@@ -189,15 +216,15 @@ Coloca player em modo de Tela Cheia ou Sai do modo de tela cheia
 
 ### Space
 
-Pausa o vídeo em reprodução ou pausa o vídeo em reprodução
+Dispara o evento _Pause/Play_
 
-## Modos
+## 🔎 Modos
 
 ### Loading Inicial
 
 ![image](https://user-images.githubusercontent.com/25160385/80925819-4e1fa280-8d69-11ea-924f-9343af95c733.png)
 
-Ao exibir o componente, ele inicia a busca dos dados do vídeo, até que o vídeo esteje pronto para reprodução.
+Ao exibir o componente, ele inicia a busca dos dados do vídeo, até o vídeo estar pronto para reprodução.
 
 
 ### Controles
@@ -206,10 +233,78 @@ Ao exibir o componente, ele inicia a busca dos dados do vídeo, até que o víde
 
 Controles disponível com o vídeo em execução.
 
-Observações: Player configurado com todos os atributos aceitáveis, no modo FullScreen
+Observações: Player configurado com todas as propriedades aceitáveis, no modo FullScreen
 
 ### StandBy
 
 ![image](https://user-images.githubusercontent.com/25160385/80925937-2bda5480-8d6a-11ea-864b-496c1e52b714.png)
 
-Player PAUSADO em estado de standby, as informações do título são redenizadas.
+Player PAUSADO em estado de _standby_, as informações do título são renderizadas.
+
+## 👩‍💻 Ajude-me a desenvolver
+
+Para testar/desenvolver o projeto siga os seguintes passos.
+
+### 📦 Requisitos
+NodeJs [⬇ Baixe aqui.](https://nodejs.org/en/download/)
+
+Git [⬇ Baixe aqui.](https://git-scm.com/)
+
+Com o node instalado, faça o clone do projeto
+
+```
+    git clone https://github.com/Lucasmg37/react-netflix-player
+```
+
+Navegue até a pasta do projeto e instale  as dependências
+
+```
+    npm install
+```
+
+Terminado, você já pode começar a desenvolver
+
+Na pasta *example* coontém a implementação do player para testes
+
+Para rodar a aplicação, execute
+
+
+```
+    npm start
+```
+
+Um servidor local estará disponível para visualização
+
+Geralmente o endereço será o _http://localhost:8080/_
+
+Caso não seja, verifique o endereço listado em seu terminal após o comando anterior.
+
+✔ O Player será renderizado com um vídeo de teste. Se este estiver indisponível, altere no arquivo *example/index.js* a propriedade _src_
+do componente para um endereço válido.
+
+Para fazer o build, execute
+
+```
+    npm run build
+```
+
+O arquivo final estará disponível na pasta *dist*
+
+## ✨ Melhorei o projeto, e agora?
+
+Chegou a hora de virar um contribuidor! Siga estes passos.
+
+1. Faça um **fork** do projeto.
+2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
+3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
+4. Envie as suas alterações: `git push origin my-feature`
+
+Em pouco tempo você será retornado.
+
+> Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
+
+## 📝 Licença
+Este projeto esta sobe a licença MIT.
+
+
+Feito com ❤ e ☕ por Lucas Dias. 👋🏽 [Entre em contato!](https://www.linkedin.com/in/lucas-junior/)

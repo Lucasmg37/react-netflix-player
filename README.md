@@ -28,7 +28,7 @@
  <a href="#page_with_curl-ajude-me-a-desenvolver">Como Desenvolver</a>
 </p>
 
-### 📦 Recursos implementados
+### 📦 :page_with_curl: Recursos implementados
 
 1. Reprodução de vídeos com Loading e Memória temporária;
 2. Listagem de lista de reprodução com marcação do vídeo em atual;
@@ -41,7 +41,7 @@
 6. Customização de cor (Feature);
 7. Tratamento de erros.
 
-### 🧱 Tecnologias
+### 🧱 :page_with_curl: Tecnologias
 
 No desenvolvimento desse projeto foi ultilizado
   
@@ -53,7 +53,7 @@ No desenvolvimento desse projeto foi ultilizado
 
  - [Webpack](https://webpack.js.org/)
 
-### ⚙ Como utilizar
+### ⚙ :page_with_curl: Como utilizar
 
 Em seu projeto react, execute o comando ```npm install react-netflix-player``` para adicionar o react-netflix-player em seu projeto.
 
@@ -65,7 +65,7 @@ Pronto, seu componente já está pronto para ser utililado, basta criá-lo em se
 
 ```<ReactNetflixPlayer/>```
 
-## 📃 Propriedades
+## 📃 :page_with_curl: Propriedades
 
 ### src: string | vídeo
 
@@ -184,7 +184,7 @@ Array com as qualidades da mídia em execução.
 Não deve ser implemtado na atual versão do Player
 
 
-## 🧨 Eventos
+## 🧨 :page_with_curl: Eventos
 
 ### Erro
 
@@ -208,7 +208,7 @@ Ao mover o mouse, ou executar o play pelo *space* o modo é desativado
 
 Quando o vídeo está  buscando frames para reprodução e não existem frames suficientes o loading é ativado
 
-## 🕹 Controles
+## 🕹 :page_with_curl: Controles
 
 ### Double Click
 
@@ -218,7 +218,7 @@ Coloca player em modo de Tela Cheia ou Sai do modo de tela cheia
 
 Dispara o evento _Pause/Play_
 
-## 🔎 Modos
+## 🔎 :page_with_curl: Modos
 
 ### Loading Inicial
 
@@ -241,7 +241,7 @@ Observações: Player configurado com todas as propriedades aceitáveis, no modo
 
 Player PAUSADO em estado de _standby_, as informações do título são renderizadas.
 
-## 👩‍💻 Ajude-me a desenvolver
+## 👩‍💻 :page_with_curl: Ajude-me a desenvolver
 
 Para testar/desenvolver o projeto siga os seguintes passos.
 
@@ -290,7 +290,7 @@ Para fazer o build, execute
 
 O arquivo final estará disponível na pasta *dist*
 
-## ✨ Melhorei o projeto, e agora?
+## ✨ :page_with_curl: Melhorei o projeto, e agora?
 
 Chegou a hora de virar um contribuidor! Siga estes passos.
 
@@ -303,7 +303,7 @@ Em pouco tempo você será retornado.
 
 > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
 
-## 📝 Licença
+## :page_with_curl: 📝 Licença
 Este projeto esta sobe a licença MIT.
 
 

@@ -18,17 +18,17 @@
 ![Anime-List (1)](https://user-images.githubusercontent.com/25160385/80926822-dbfe8c00-8d6f-11ea-8e39-c24ffc6cfb1b.gif)
 
 <p align=center>
- <a href="#page_with_curl-recursos-implementados">Recursos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#page_with_curl-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#page_with_curl-como-utiliza">Como Utilizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#page_with_curl-propriedades">Propriedades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#page_with_curl-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#page_with_curl-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#page_with_curl-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#page_with_curl-ajude-me-a-desenvolver">Como Desenvolver</a>
+ <a href="#📦-recursos-implementados">Recursos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#🧱-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#⚙-como-utiliza">Como Utilizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#📃-propriedades">Propriedades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#🧨-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#🔎-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#🕹-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#👩‍💻-ajude-me-a-desenvolver">Como Desenvolver</a>
 </p>
 
-### 📦 :page_with_curl: Recursos implementados
+### 📦 Recursos implementados
 
 1. Reprodução de vídeos com Loading e Memória temporária;
 2. Listagem de lista de reprodução com marcação do vídeo em atual;
@@ -41,7 +41,7 @@
 6. Customização de cor (Feature);
 7. Tratamento de erros.
 
-### 🧱 :page_with_curl: Tecnologias
+### 🧱 Tecnologias
 
 No desenvolvimento desse projeto foi ultilizado
   
@@ -53,7 +53,7 @@ No desenvolvimento desse projeto foi ultilizado
 
  - [Webpack](https://webpack.js.org/)
 
-### ⚙ :page_with_curl: Como utilizar
+### ⚙ Como utilizar
 
 Em seu projeto react, execute o comando ```npm install react-netflix-player``` para adicionar o react-netflix-player em seu projeto.
 
@@ -65,7 +65,7 @@ Pronto, seu componente já está pronto para ser utililado, basta criá-lo em se
 
 ```<ReactNetflixPlayer/>```
 
-## 📃 :page_with_curl: Propriedades
+## 📃 Propriedades
 
 ### src: string | vídeo
 
@@ -184,7 +184,7 @@ Array com as qualidades da mídia em execução.
 Não deve ser implemtado na atual versão do Player
 
 
-## 🧨 :page_with_curl: Eventos
+## 🧨 Eventos
 
 ### Erro
 
@@ -208,7 +208,7 @@ Ao mover o mouse, ou executar o play pelo *space* o modo é desativado
 
 Quando o vídeo está  buscando frames para reprodução e não existem frames suficientes o loading é ativado
 
-## 🕹 :page_with_curl: Controles
+## 🕹 Controles
 
 ### Double Click
 
@@ -218,7 +218,7 @@ Coloca player em modo de Tela Cheia ou Sai do modo de tela cheia
 
 Dispara o evento _Pause/Play_
 
-## 🔎 :page_with_curl: Modos
+## 🔎 Modos
 
 ### Loading Inicial
 
@@ -241,7 +241,7 @@ Observações: Player configurado com todas as propriedades aceitáveis, no modo
 
 Player PAUSADO em estado de _standby_, as informações do título são renderizadas.
 
-## 👩‍💻 :page_with_curl: Ajude-me a desenvolver
+## 👩‍💻 Ajude-me a desenvolver
 
 Para testar/desenvolver o projeto siga os seguintes passos.
 
@@ -290,7 +290,7 @@ Para fazer o build, execute
 
 O arquivo final estará disponível na pasta *dist*
 
-## ✨ :page_with_curl: Melhorei o projeto, e agora?
+## ✨ Melhorei o projeto, e agora?
 
 Chegou a hora de virar um contribuidor! Siga estes passos.
 
@@ -303,7 +303,7 @@ Em pouco tempo você será retornado.
 
 > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
 
-## :page_with_curl: 📝 Licença
+## 📝 Licença
 Este projeto esta sobe a licença MIT.
 
 

@@ -4,31 +4,29 @@
 
 ℹ Player de video com as funcionalidades existentes no atual player da Netflix Web.
 
-<p align=center>
 
-![shield1](https://img.shields.io/bundlephobia/min/react-netflix-player?style=for-the-badge)
-![shield2](https://img.shields.io/github/repo-size/lucasmg37/react-netflix-player?style=for-the-badge)
-![shield3](https://img.shields.io/npm/dw/react-netflix-player?style=for-the-badge)
-![shield4](https://img.shields.io/github/issues/lucasmg37/react-netflix-player?style=for-the-badge)
-![shield5](https://img.shields.io/npm/l/react-netflix-player?style=for-the-badge)
-![shield6](https://img.shields.io/github/stars/lucasmg37/react-netflix-player?style=for-the-badge)
-![shield7](https://img.shields.io/github/last-commit/lucasmg37/react-netflix-player?style=for-the-badge)
-
+<p align="center">
+    <img alt="Shield" src="https://img.shields.io/bundlephobia/min/react-netflix-player?style=for-the-badge"/>
+    <img alt="Shield" src="https://img.shields.io/github/repo-size/lucasmg37/react-netflix-player?style=for-the-badge"/>
+    <img alt="Shield" src="https://img.shields.io/npm/dw/react-netflix-player?style=for-the-badge"/>
+    <img alt="Shield" src="https://img.shields.io/github/issues/lucasmg37/react-netflix-player?style=for-the-badge"/>
+    <img alt="Shield" src="https://img.shields.io/npm/l/react-netflix-player?style=for-the-badge"/>
+    <img alt="Shield" src="https://img.shields.io/github/stars/lucasmg37/react-netflix-player?style=for-the-badge"/>
+    <img alt="Shield" src="https://img.shields.io/github/last-commit/lucasmg37/react-netflix-player?style=for-the-badge"/>    
 </p>
 
 ![Anime-List (1)](https://user-images.githubusercontent.com/25160385/80926822-dbfe8c00-8d6f-11ea-8e39-c24ffc6cfb1b.gif)
 
 <p align=center>
-
-[Recursos](https://github.com/Lucasmg37/react-netflix-player/tree/development-local#-recursos-implementados) | 
-[Tecnologias](https://github.com/Lucasmg37/react-netflix-player/tree/development-local#-tecnologias) | 
-[Como Utilizar](https://github.com/Lucasmg37/react-netflix-player/tree/development-local#-como-utilizar) | 
-[Propriedades](https://github.com/Lucasmg37/react-netflix-player/tree/development-local#-propriedades) | 
-[Eventos](https://github.com/Lucasmg37/react-netflix-player/tree/development-local#-eventos) | 
-[Controles](https://github.com/Lucasmg37/react-netflix-player/tree/development-local#-modos) | 
-[Como Desenvolver](https://github.com/Lucasmg37/react-netflix-player/tree/development-local#-ajude-me-a-desenvolver) | 
-[Autor](https://github.com/Lucasmg37/react-netflix-player/tree/development-local#autor) 
-
+ <a href="#page_with_curl-recursos-implementados">Recursos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#page_with_curl-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#page_with_curl-como-utiliza">Como Utilizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#page_with_curl-propriedades">Propriedades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#page_with_curl-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#page_with_curl-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#page_with_curl-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#page_with_curl-ajude-me-a-desenvolver">Como Desenvolver</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#page_with_curl-autor">Autor</a>
 </p>
 
 ### 📦 Recursos implementados
@@ -310,7 +308,7 @@ Em pouco tempo você será retornado.
 
 Este projeto esta sobe a licença MIT. Veja a [LICENÇA](license) para saber mais.
 
-### Autor
+### 😎 Autor
 
 | [<img width="120px" src="https://avatars0.githubusercontent.com/u/25160385?s=460&u=ebcea7d6d94724adaea5284286357b1fce500f02&v=4"><br><sub>@lucasmg37</sub>](https://github.com/lucasmg37)|
 | :---: |

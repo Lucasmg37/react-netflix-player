@@ -18,14 +18,14 @@
 ![Anime-List (1)](https://user-images.githubusercontent.com/25160385/80926822-dbfe8c00-8d6f-11ea-8e39-c24ffc6cfb1b.gif)
 
 <p align=center>
- <a href="#📦-recursos-implementados">Recursos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#🧱-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#⚙-como-utiliza">Como Utilizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#📃-propriedades">Propriedades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#🧨-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#🔎-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#🕹-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#👩‍💻-ajude-me-a-desenvolver">Como Desenvolver</a>
+ <a href="#-recursos-implementados">Recursos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-como-utiliza">Como Utilizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-propriedades">Propriedades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-POINTING MAGNIFYING-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-ajude-me-a-desenvolver">Como Desenvolver</a>
 </p>
 
 ### 📦 Recursos implementados

@@ -308,7 +308,7 @@ Este projeto esta sobe a licença MIT. Veja a [LICENÇA](license) para saber mai
 
 ### Autor
 
-| [<img width="120px" src="https://avatars0.githubusercontent.com/u/25160385?s=460&u=ebcea7d6d94724adaea5284286357b1fce500f02&v=4"><br><br><sub>@lucasmg37</sub>](https://github.com/lucasmg37)|
+| [<img width="120px" src="https://avatars0.githubusercontent.com/u/25160385?s=460&u=ebcea7d6d94724adaea5284286357b1fce500f02&v=4"><br><sub>@lucasmg37</sub>](https://github.com/lucasmg37)|
 | :---: |
 
 Feito com ❤ e ☕ por Lucas Dias. 👋🏽 [Entre em contato!](hhttps://www.linkedin.com/in/lucas-junior/)

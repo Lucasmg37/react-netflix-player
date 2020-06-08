@@ -285,7 +285,7 @@ do componente para um endereço válido.
 Para fazer o build, execute
 
 ```
-    npm build
+    npm run build
 ```
 
 O arquivo final estará disponível na pasta *dist*

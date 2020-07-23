@@ -252,6 +252,10 @@ export default function ReactNetflixPlayer({
 
       if (document.exitFullscreen) {
         document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
       } else {
         document.webkitExitFullscreen();
       }
@@ -287,12 +291,15 @@ export default function ReactNetflixPlayer({
 
     if (playerElement.current.requestFullscreen) {
       playerElement.current.requestFullscreen();
-      setFullSreen(true);
     } else if (playerElement.current.webkitRequestFullscreen) {
       playerElement.current.webkitRequestFullscreen();
-      setFullSreen(true);
+    } else if (playerElement.current.mozRequestFullScreen) {
+      playerElement.current.mozRequestFullScreen();
+    } else if (playerElement.current.msRequestFullscreen) {
+      playerElement.current.msRequestFullscreen();
     }
 
+    setFullSreen(true);
   };
 
   const setStateFullScreen = () => {

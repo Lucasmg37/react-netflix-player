@@ -1,6 +1,6 @@
 {
     "name": "react-netflix-player",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "React Video Player Based in Netflix Design",
     "main": "./dist/ReactNetflixPlayer.js",
     "license": "MIT",

@@ -224,7 +224,7 @@ export default function ReactNetflixPlayer({
     setVideoReady(true);
   };
 
-  const erroVideo = (e) => {
+  const erroVideo = () => {
     if (onErrorVideo) {
       onErrorVideo();
     }
@@ -250,6 +250,7 @@ export default function ReactNetflixPlayer({
       document.fullscreenElement
     ) {
       document.webkitExitFullscreen();
+      setFullSreen(false);
     }
   };
 
@@ -355,20 +356,25 @@ export default function ReactNetflixPlayer({
 
   useEffect(() => {
     document.addEventListener("keydown", getKeyBoardInteration, false);
-    playerElement.current.addEventListener(
+
+    document.addEventListener(
       "fullscreenchange",
       setStateFullScreen,
-      false
+      true
     );
   }, []);
+
+  useEffect(() => {
+    setStateFullScreen();
+  }, [document.fullscreenElement]);
 
   function renderLoading() {
     return (
       <div className="loading">
         <div className="loading-component">
-          <div />
-          <div />
-          <div />
+          <div/>
+          <div/>
+          <div/>
         </div>
       </div>
     );

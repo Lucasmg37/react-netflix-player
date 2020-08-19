@@ -6,9 +6,7 @@ ReactDOM.render(
   <div>
     <ReactNetflixPlayer
       // Vídeo Link - Just data is required
-      src={
-        "https://d1rfq3h2na8ms8.cloudfront.net/editorial/2020/03-16/AnNevEBb-medium.mp4"
-      }
+      src={"http://lucasjunior.com.br/teste.mp4"}
       // src={"http://videoinvalid"}
       title={"Dragon Ball Z"}
       subTitle={"Opening"}

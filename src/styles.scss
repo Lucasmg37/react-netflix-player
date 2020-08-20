@@ -392,6 +392,37 @@
   }
 }
 
+.playbackRate {
+  cursor: pointer;
+  font-weight: bold;
+  max-width: 150px;
+
+  small {
+    font-weight: lighter;
+    font-weight: 10px;
+  }
+
+  span {
+    opacity: 0.2;
+    font-size: 25px;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  .item {
+    flex-direction: row;
+    align-items: center;
+  }
+  svg {
+    font-size: 14px !important;
+    margin-right: 5px;
+  }
+}
+
 .list-quality-component {
   bottom: 20px;
   right: -20px;

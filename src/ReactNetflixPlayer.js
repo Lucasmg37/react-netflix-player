@@ -253,14 +253,29 @@ export default function ReactNetflixPlayer({
       || document.msFullscreenElement
       || document.fullscreenElement
     ) {
-      document.webkitExitFullscreen();
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else {
+        document.webkitExitFullscreen();
+      }
+
+      setFullSreen(false);
     }
   };
 
   const enterFullScreen = () => {
     setShowInfo(true);
-    playerElement.current.webkitRequestFullscreen();
-    setFullSreen(true);
+    if (playerElement.current.requestFullscreen) {
+      playerElement.current.requestFullscreen();
+      setFullSreen(true);
+    } else if (playerElement.current.webkitRequestFullscreen) {
+      playerElement.current.webkitRequestFullscreen();
+      setFullSreen(true);
+    }
   };
 
   const chooseFullScreen = () => {
@@ -275,7 +290,17 @@ export default function ReactNetflixPlayer({
     }
 
     setShowInfo(true);
-    playerElement.current.webkitRequestFullscreen();
+
+    if (playerElement.current.requestFullscreen) {
+      playerElement.current.requestFullscreen();
+    } else if (playerElement.current.webkitRequestFullscreen) {
+      playerElement.current.webkitRequestFullscreen();
+    } else if (playerElement.current.mozRequestFullScreen) {
+      playerElement.current.mozRequestFullScreen();
+    } else if (playerElement.current.msRequestFullscreen) {
+      playerElement.current.msRequestFullscreen();
+    }
+
     setFullSreen(true);
   };
 
@@ -371,6 +396,11 @@ export default function ReactNetflixPlayer({
       false,
     );
   }, []);
+
+  // When changes happend in fullscreen document, teh state of fullscreen is changed
+  useEffect(() => {
+    setStateFullScreen();
+  }, [document.fullscreenElement, document.webkitIsFullScreen, document.mozFullScreen, document.msFullscreenElement]);
 
   function renderLoading() {
     return (

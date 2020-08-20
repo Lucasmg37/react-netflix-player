@@ -37,9 +37,10 @@
 5. Recursos de Play/Pause, Avançar/Retroceder e FullScreen;
 6. Suporte a múltiplos links de reprodução;
 7. Informações da mídia em execução;
-5. Sistema de ocultação dos controles mediante tempo de espera;
-6. Customização de cor (Feature);
-7. Tratamento de erros.
+8. Playback Rate, Possibilitando alterar a velocidade de Reprodução;
+9. Sistema de ocultação dos controles mediante tempo de espera;
+10. Customização de cor (Feature);
+11. Tratamento de erros.
 
 ### 🧱 Tecnologias
 
@@ -52,6 +53,12 @@ No desenvolvimento desse projeto foi ultilizado
  - [Babel](https://babeljs.io/)
 
  - [Webpack](https://webpack.js.org/)
+
+Qualidade de Código
+
+ - [ESlint](https://eslint.org/)
+
+ - [Prettier](https://prettier.io/)
 
 ### ⚙ Como utilizar
 
@@ -114,13 +121,19 @@ Informa se o vídeo deverá iniciar automáticamente, por padrão o valor é _fa
 
 Informa em qual segundo a reprodução do vídeo deverá iniciar
 
+### playbackRateEnable: true
+
+Informa se as opções de Playback Rate podem ser acessadas, por padrão o valor é _true_
+
+Observações: As opções não podem ser alteradas. Disponíveis as velocidades 0.25, 0.5, 0.75, Normal, 1.25, 1.5 e 2.
+
 ### dataNext: {}
 
 Objeto com os dados a serem redenizados na área de *Próximo Vídeo*, este parâmetro não é obrigatório para utilizar a funcionalidade. É possível enviar somente a função a ser executada.
 
 ```
     {
-        title: 'Texto a ser exebido',
+        title: 'Texto a ser exibido',
         description: 'Descrição'
     }
 ```

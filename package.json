@@ -1,43 +1,57 @@
 {
-    "name": "react-netflix-player",
-    "version": "1.0.9",
-    "description": "React Video Player Based in Netflix Design",
-    "main": "./dist/ReactNetflixPlayer.js",
-    "publishConfig": { "registry": "https://npm.pkg.github.com/" },
-    "license": "MIT",
-    "scripts": {
-        "start": "webpack-dev-server --config webpack.config.dev.js",
-        "build": "webpack",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Lucasmg37/react-netflix-player.git"
-    },
-    "author": "Lucas Junior Dias",
-    "peerDependencies": {},
-    "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.21.0",
-        "babel-loader": "^7.1.4",
-        "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-plugin-transform-react-jsx": "^6.24.1",
-        "babel-preset-env": "^1.6.1",
-        "babel-preset-react": "^6.16.0",
-        "babel-preset-stage-0": "^6.24.1",
-        "css-loader": "^3.5.3",
-        "extract-text-webpack-plugin": "^3.0.2",
-        "node-sass": "^4.14.1",
-        "path": "^0.12.7",
-        "react-dom": "^16.13.1",
-        "sass-loader": "^8.0.2",
-        "style-loader": "^1.2.1",
-        "webpack": "^4.43.0",
-        "webpack-cli": "^3.2.1",
-        "webpack-dev-server": "^3.11.0"
-    },
-    "dependencies": {
-        "react": "^16.0.0",
-        "react-icons": "^3.9.0"
-    }
+  "name": "react-netflix-player",
+  "version": "1.0.9",
+  "description": "React Video Player Based in Netflix Design",
+  "main": "./dist/ReactNetflixPlayer.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lucasmg37/react-netflix-player.git"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "avoid"
+  },
+  "author": "Lucas Junior Dias",
+  "peerDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^3.5.3",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.14.1",
+    "path": "^0.12.7",
+    "prettier": "^2.0.5",
+    "react-dom": "^16.13.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-icons": "^3.9.0"
+  }
 }

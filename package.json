@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "react": "^16.0.0",
-    "react-icons": "^3.9.0"
+    "react-icons": "^3.9.0",
+    "styled-components": "^5.1.1"
   }
 }

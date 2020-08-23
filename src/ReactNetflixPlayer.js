@@ -16,9 +16,18 @@ import {
   FaRedoAlt,
 } from 'react-icons/fa';
 import { FiCheck, FiX } from 'react-icons/fi';
-import './styles.scss';
 import {
-  Loading, StandyByInfo, VideoPreLoading, Container, Controlls, VolumeControll,
+  Loading,
+  StandyByInfo,
+  VideoPreLoading,
+  Container,
+  Controlls,
+  VolumeControll,
+  ItemPlaybackRate,
+  IconPlayBackRate,
+  ItemNext,
+  ItemListReproduction,
+  ItemListQuality,
 } from './styles';
 
 export default function ReactNetflixPlayer({
@@ -49,6 +58,9 @@ export default function ReactNetflixPlayer({
   playbackRateEnable = true,
   primaryColor = '#03dffc',
   secundaryColor = '#ffffff',
+
+  overlayEnabled = true,
+  autoControllCloseEnabled = true,
 }) {
   // Referências
   const videoComponent = useRef(null);
@@ -69,7 +81,7 @@ export default function ReactNetflixPlayer({
   const [mutted, setMutted] = useState(false);
   const [error, setError] = useState(false);
   const [waitingBuffer, setWaitingBuffer] = useState(false);
-  const [showControlls, setShowControlls] = useState(false);
+  const [showControlls, setShowControlls] = useState(!autoControllCloseEnabled);
   const [showInfo, setShowInfo] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
 
@@ -81,13 +93,13 @@ export default function ReactNetflixPlayer({
 
   const playbackRateOptions = ['0.25', '0.5', '0.75', 'Normal', '1.25', '1.5', '2'];
 
-  const [atualBuffer, setAtualBuffer] = useState({
+  const [, setAtualBuffer] = useState({
     index: 0,
     start: 0,
     end: 0,
   });
 
-  const secondsToHms = (d) => {
+  const secondsToHms = d => {
     d = Number(d);
     const h = Math.floor(d / 3600);
     const m = Math.floor((d % 3600) / 60);
@@ -104,7 +116,7 @@ export default function ReactNetflixPlayer({
     return `${m}:${s}`;
   };
 
-  const timeUpdate = (e) => {
+  const timeUpdate = e => {
     setShowInfo(false);
     setEnd(false);
     if (playing) {
@@ -157,7 +169,7 @@ export default function ReactNetflixPlayer({
     setProgress(e.target.currentTime);
   };
 
-  const goToPosition = (position) => {
+  const goToPosition = position => {
     videoComponent.current.currentTime = position;
     setProgress(position);
   };
@@ -178,10 +190,7 @@ export default function ReactNetflixPlayer({
   };
 
   const onEndedFunction = () => {
-    if (
-      +startPosition === +videoComponent.current.duration
-      && !controllBackEnd
-    ) {
+    if (+startPosition === +videoComponent.current.duration && !controllBackEnd) {
       setControllBackEnd(true);
       videoComponent.current.currentTime = videoComponent.current.duration - 30;
       if (autoPlay) {
@@ -200,7 +209,7 @@ export default function ReactNetflixPlayer({
     }
   };
 
-  const nextSeconds = (seconds) => {
+  const nextSeconds = seconds => {
     const current = videoComponent.current.currentTime;
     const total = videoComponent.current.duration;
 
@@ -214,7 +223,7 @@ export default function ReactNetflixPlayer({
     setProgress(videoComponent.current.currentTime + seconds);
   };
 
-  const previousSeconds = (seconds) => {
+  const previousSeconds = seconds => {
     const current = videoComponent.current.currentTime;
 
     if (current - seconds <= 0) {
@@ -240,23 +249,23 @@ export default function ReactNetflixPlayer({
     setError('Ocorreu um erro ao tentar reproduzir este vídeo -_-');
   };
 
-  const setMuttedAction = (value) => {
+  const setMuttedAction = value => {
     setMutted(value);
     setShowControllVolume(false);
     videoComponent.current.muted = value;
   };
 
-  const setVolumeAction = (value) => {
+  const setVolumeAction = value => {
     setVolume(value);
     videoComponent.current.volume = value / 100;
   };
 
   const exitFullScreen = () => {
     if (
-      document.webkitIsFullScreen
-      || document.mozFullScreen
-      || document.msFullscreenElement
-      || document.fullscreenElement
+      document.webkitIsFullScreen ||
+      document.mozFullScreen ||
+      document.msFullscreenElement ||
+      document.fullscreenElement
     ) {
       if (document.exitFullscreen) {
         document.exitFullscreen();
@@ -285,10 +294,10 @@ export default function ReactNetflixPlayer({
 
   const chooseFullScreen = () => {
     if (
-      document.webkitIsFullScreen
-      || document.mozFullScreen
-      || document.msFullscreenElement
-      || document.fullscreenElement
+      document.webkitIsFullScreen ||
+      document.mozFullScreen ||
+      document.msFullscreenElement ||
+      document.fullscreenElement
     ) {
       document.exitFullscreen();
       return;
@@ -311,10 +320,10 @@ export default function ReactNetflixPlayer({
 
   const setStateFullScreen = () => {
     if (
-      !document.webkitIsFullScreen
-      && !document.mozFullScreen
-      && !document.msFullscreenElement
-      && !document.fullscreenElement
+      !document.webkitIsFullScreen &&
+      !document.mozFullScreen &&
+      !document.msFullscreenElement &&
+      !document.fullscreenElement
     ) {
       setFullSreen(false);
       return;
@@ -324,6 +333,11 @@ export default function ReactNetflixPlayer({
   };
 
   const controllScreenTimeOut = () => {
+    if (!autoControllCloseEnabled) {
+      setShowInfo(true);
+      return;
+    }
+
     setShowControlls(false);
     if (!playing) {
       setShowInfo(true);
@@ -341,7 +355,7 @@ export default function ReactNetflixPlayer({
     timerRef.current = setTimeout(controllScreenTimeOut, 5000);
   };
 
-  const getKeyBoardInteration = (e) => {
+  const getKeyBoardInteration = e => {
     if (e.keyCode === 32 && videoComponent.current) {
       if (videoComponent.current.paused) {
         videoComponent.current.play();
@@ -363,7 +377,7 @@ export default function ReactNetflixPlayer({
     element.scrollTop = position - height * 2;
   };
 
-  const onChangePlayBackRate = (speed) => {
+  const onChangePlayBackRate = speed => {
     speed = speed === 'Normal' ? 1 : speed;
     videoComponent.current.playbackRate = speed;
     setPlaybackRate(speed);
@@ -395,11 +409,7 @@ export default function ReactNetflixPlayer({
 
   useEffect(() => {
     document.addEventListener('keydown', getKeyBoardInteration, false);
-    playerElement.current.addEventListener(
-      'fullscreenchange',
-      setStateFullScreen,
-      false,
-    );
+    playerElement.current.addEventListener('fullscreenchange', setStateFullScreen, false);
   }, []);
 
   // When changes happend in fullscreen document, teh state of fullscreen is changed
@@ -443,14 +453,11 @@ export default function ReactNetflixPlayer({
       <VideoPreLoading
         backgroundColorHoverButtonError="#f78b28"
         colorHoverButtonError="#ddd"
-
         colorButtonError="#ddd"
         backgroundColorButtonError="#333"
-
         colorTitle="#fff"
         colorSubTitle="#fff"
         colorIcon="#fff"
-
         show={videoReady === false || (videoReady === true && error)}
         showError={!!error}
       >
@@ -472,7 +479,7 @@ export default function ReactNetflixPlayer({
                 <div>
                   <p>Tente acessar por outra qualidade</p>
                   <div className="links-error">
-                    {qualities.map((item) => (
+                    {qualities.map(item => (
                       <div onClick={() => onChangeQuality(item.id)}>
                         {item.prefix && <span>HD</span>}
                         <span>{item.nome}</span>
@@ -497,13 +504,9 @@ export default function ReactNetflixPlayer({
       fullPlayer={fullPlayer}
       hideVideo={!!error}
     >
-      {(videoReady === false
-          || (waitingBuffer === true && playing === true))
-          && !error
-          && !end
-          && renderLoading()}
+      {(videoReady === false || (waitingBuffer === true && playing === true)) && !error && !end && renderLoading()}
 
-      {renderInfoVideo()}
+      {!!overlayEnabled && renderInfoVideo()}
 
       {renderCloseVideo()}
 
@@ -525,7 +528,6 @@ export default function ReactNetflixPlayer({
         progressVideo={(progress * 100) / duration}
       >
         {backButton && (
-
           <div className="back">
             <div onClick={backButton} style={{ cursor: 'pointer' }}>
               <FaArrowLeft />
@@ -534,32 +536,31 @@ export default function ReactNetflixPlayer({
           </div>
         )}
 
-        {showControllVolume !== true
-            && showQuallity !== true
-            && !showDataNext
-            && !showReproductionList && (
-              <div className="line-reproduction">
-                <input
-                  type="range"
-                  value={progress}
-                  className="progress-bar"
-                  max={duration}
-                  onChange={(e) => goToPosition(e.target.value)}
-                  title=""
-                  style={{
-                    // background: `linear-gradient(93deg, rgba(247,139,40,1) ${
-                    //   (progress * 100) / duration
-                    // }%, blue ${
-                    //   (progress * 100) / duration
-                    // }%, blue ${
-                    //   (atualBuffer.end * 100) / duration
-                    // }%, red ${
-                    //   (atualBuffer.end * 100) / duration
-                    // }%)`,
-                  }}
-                />
-                <span>{secondsToHms(duration - progress)}</span>
-              </div>
+        {showControllVolume !== true && showQuallity !== true && !showDataNext && !showReproductionList && (
+          <div className="line-reproduction">
+            <input
+              type="range"
+              value={progress}
+              className="progress-bar"
+              max={duration}
+              onChange={e => goToPosition(e.target.value)}
+              title=""
+              style={
+                {
+                  // background: `linear-gradient(93deg, rgba(247,139,40,1) ${
+                  //   (progress * 100) / duration
+                  // }%, blue ${
+                  //   (progress * 100) / duration
+                  // }%, blue ${
+                  //   (atualBuffer.end * 100) / duration
+                  // }%, red ${
+                  //   (atualBuffer.end * 100) / duration
+                  // }%)`,
+                }
+              }
+            />
+            <span>{secondsToHms(duration - progress)}</span>
+          </div>
         )}
 
         {videoReady === true && (
@@ -585,8 +586,7 @@ export default function ReactNetflixPlayer({
                   primaryColor={primaryColor}
                   percentVolume={volume}
                 >
-
-                    {showControllVolume === true && (
+                  {showControllVolume === true && (
                     <div className="volumn-controll">
                       <div className="box-connector" />
                       <div className="box">
@@ -595,48 +595,44 @@ export default function ReactNetflixPlayer({
                           min={0}
                           max={100}
                           value={volume}
-                          onChange={(e) => setVolumeAction(e.target.value)}
+                          onChange={e => setVolumeAction(e.target.value)}
                           title=""
                         />
                       </div>
                     </div>
-                    )}
+                  )}
 
-                    {volume >= 60 && (
+                  {volume >= 60 && (
                     <FaVolumeUp
                       onMouseEnter={() => setShowControllVolume(true)}
                       onClick={() => setMuttedAction(true)}
                     />
-                    )}
+                  )}
 
-                    {volume < 60 && volume >= 10 && (
+                  {volume < 60 && volume >= 10 && (
                     <FaVolumeDown
                       onMouseEnter={() => setShowControllVolume(true)}
                       onClick={() => setMuttedAction(true)}
                     />
-                    )}
+                  )}
 
-                    {volume < 10 && volume > 0 && (
+                  {volume < 10 && volume > 0 && (
                     <FaVolumeOff
                       onMouseEnter={() => setShowControllVolume(true)}
                       onClick={() => setMuttedAction(true)}
                     />
-                    )}
+                  )}
 
-                    {volume <= 0 && (
-                    <FaVolumeMute
-                      onMouseEnter={() => setShowControllVolume(true)}
-                      onClick={() => setVolumeAction(0)}
-                    />
-                    )}
-
+                  {volume <= 0 && (
+                    <FaVolumeMute onMouseEnter={() => setShowControllVolume(true)} onClick={() => setVolumeAction(0)} />
+                  )}
                 </VolumeControll>
               )}
 
               {mutted === true && (
-              <div className="item-control">
-                <FaVolumeMute onClick={() => setMuttedAction(false)} />
-              </div>
+                <div className="item-control">
+                  <FaVolumeMute onClick={() => setMuttedAction(false)} />
+                </div>
               )}
 
               <div className="item-control info-video">
@@ -647,145 +643,113 @@ export default function ReactNetflixPlayer({
 
             <div className="end">
               {!!playbackRateEnable && (
-              <div
-                className="item-control"
-                onMouseLeave={() => setShowPlaybackRate(false)}
-              >
-                {showPlaybackRate === true && (
-                <div className="item-component playbackRate">
-                  <div className="content-next">
-                    <div className="title">Velocidades</div>
-                    {playbackRateOptions.map((item) => (
-                      <div className="item" onClick={() => onChangePlayBackRate(item)}>
-                        {((+item === +playbackRate) || (item === 'Normal' && +playbackRate === 1)) && FiCheck()}
-                        <div className="bold">
-                          {item === 'Normal' ? item : `${item}x`}
-                        </div>
+                <div className="item-control" onMouseLeave={() => setShowPlaybackRate(false)}>
+                  {showPlaybackRate === true && (
+                    <ItemPlaybackRate>
+                      <div>
+                        <div className="title">Velocidades</div>
+                        {playbackRateOptions.map(item => (
+                          <div className="item" onClick={() => onChangePlayBackRate(item)}>
+                            {(+item === +playbackRate || (item === 'Normal' && +playbackRate === 1)) && FiCheck()}
+                            <div className="bold">{item === 'Normal' ? item : `${item}x`}</div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                  <div className="box-connector" />
-                </div>
-                )}
+                      <div className="box-connector" />
+                    </ItemPlaybackRate>
+                  )}
 
-                <div className="playbackRate" onMouseEnter={() => setShowPlaybackRate(true)}>
-                  <span>
-                    {playbackRate === 'Normal' ? '1' : `${playbackRate}`}<small>x</small>
-                  </span>
+                  <IconPlayBackRate className="playbackRate" onMouseEnter={() => setShowPlaybackRate(true)}>
+                    <span>
+                      {playbackRate === 'Normal' ? '1' : `${playbackRate}`}
+                      <small>x</small>
+                    </span>
+                  </IconPlayBackRate>
                 </div>
-              </div>
               )}
 
               {onNextClick && (
-              <div
-                className="item-control"
-                onMouseLeave={() => setShowDataNext(false)}
-              >
-                {showDataNext === true && dataNext.title && (
-                <div className="item-component">
-                  <div className="content-next">
-                    <div className="title">Próximo Episódio</div>
-                    <div className="item" onClick={onNextClick}>
-                      <div className="bold">{dataNext.title}</div>
-                      {dataNext.description && (
-                      <div>{dataNext.description}</div>
-                      )}
-                    </div>
-                  </div>
-                  <div className="box-connector" />
-                </div>
-                )}
+                <div className="item-control" onMouseLeave={() => setShowDataNext(false)}>
+                  {showDataNext === true && dataNext.title && (
+                    <ItemNext>
+                      <div>
+                        <div className="title">Próximo Episódio</div>
+                        <div className="item" onClick={onNextClick}>
+                          <div className="bold">{dataNext.title}</div>
+                          {dataNext.description && <div>{dataNext.description}</div>}
+                        </div>
+                      </div>
+                      <div className="box-connector" />
+                    </ItemNext>
+                  )}
 
-                <FaStepForward
-                  onClick={onNextClick}
-                  onMouseEnter={() => setShowDataNext(true)}
-                />
-              </div>
+                  <FaStepForward onClick={onNextClick} onMouseEnter={() => setShowDataNext(true)} />
+                </div>
               )}
 
-              <div
-                className="item-control"
-                onMouseLeave={() => setShowReproductionList(false)}
-              >
+              <div className="item-control" onMouseLeave={() => setShowReproductionList(false)}>
                 {showReproductionList && (
-                <div className="item-component item-component-list-rep">
-                  <div className="content-list-reprodution">
-                    <div className="title">Lista de Reprodução</div>
-                    <div
-                      ref={listReproduction}
-                      className="list-list-reproduction scroll-clean-player"
-                    >
-                      {reprodutionList.map((item, index) => (
-                        <div
-                          className={`item-list-reproduction ${
-                            item.playing && 'selected'
-                          }`}
-                          onClick={() => onClickItemListReproduction
-                                && onClickItemListReproduction(
-                                  item.id,
-                                  item.playing,
-                                )}
-                        >
-                          <div className="bold">
-                            <span style={{ marginRight: 15 }}>
-                              {index + 1}
-                            </span>
-                            {item.nome}
-                          </div>
+                  <ItemListReproduction>
+                    <div>
+                      <div className="title">Lista de Reprodução</div>
+                      <div ref={listReproduction} className="list-list-reproduction scroll-clean-player">
+                        {reprodutionList.map((item, index) => (
+                          <div
+                            className={`item-list-reproduction ${item.playing && 'selected'}`}
+                            onClick={
+                              () => onClickItemListReproduction && onClickItemListReproduction(item.id, item.playing)
+                              // eslint-disable-next-line react/jsx-curly-newline
+                            }
+                          >
+                            <div className="bold">
+                              <span style={{ marginRight: 15 }}>{index + 1}</span>
+                              {item.nome}
+                            </div>
 
-                          {item.percent && <div className="percent" />}
-                        </div>
-                      ))}
+                            {item.percent && <div className="percent" />}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="box-connector" />
-                </div>
+                    <div className="box-connector" />
+                  </ItemListReproduction>
                 )}
                 {reprodutionList && reprodutionList.length > 1 && (
-                <FaClone
-                  onMouseEnter={() => setShowReproductionList(true)}
-                />
+                  <FaClone onMouseEnter={() => setShowReproductionList(true)} />
                 )}
               </div>
 
               {qualities && qualities.length > 1 && (
-              <div
-                className="item-control"
-                onMouseLeave={() => setShowQuallity(false)}
-              >
-                {showQuallity === true && (
-                <div className="list-quality-component">
-                  <div className="content">
-                    {qualities
-                            && qualities.map((item) => (
-                              <div
-                                onClick={() => {
-                                  setShowQuallity(false);
-                                  onChangeQuality(item.id);
-                                }}
-                              >
-                                {item.prefix && <span>HD</span>}
+                <div className="item-control" onMouseLeave={() => setShowQuallity(false)}>
+                  {showQuallity === true && (
+                    <ItemListQuality>
+                      <div>
+                        {qualities &&
+                          qualities.map(item => (
+                            <div
+                              onClick={() => {
+                                setShowQuallity(false);
+                                onChangeQuality(item.id);
+                              }}
+                            >
+                              {item.prefix && <span>HD</span>}
 
-                                <span>{item.nome}</span>
-                                {item.playing && <FiCheck />}
-                              </div>
-                            ))}
-                  </div>
-                  <div className="box-connector" />
+                              <span>{item.nome}</span>
+                              {item.playing && <FiCheck />}
+                            </div>
+                          ))}
+                      </div>
+                      <div className="box-connector" />
+                    </ItemListQuality>
+                  )}
+
+                  <FaCog onMouseEnter={() => setShowQuallity(true)} />
                 </div>
-                )}
-
-                <FaCog onMouseEnter={() => setShowQuallity(true)} />
-              </div>
               )}
 
               <div className="item-control">
-                {fullSreen === false && (
-                <FaExpand onClick={enterFullScreen} />
-                )}
-                {fullSreen === true && (
-                <FaCompress onClick={exitFullScreen} />
-                )}
+                {fullSreen === false && <FaExpand onClick={enterFullScreen} />}
+                {fullSreen === true && <FaCompress onClick={exitFullScreen} />}
               </div>
             </div>
           </div>

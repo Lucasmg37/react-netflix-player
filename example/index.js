@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactNetflixPlayer from '../src/ReactNetflixPlayer.js';
+import ReactNetflixPlayer from '../src/ReactNetflixPlayer';
 
 ReactDOM.render(
   <div>
@@ -39,11 +39,20 @@ ReactDOM.render(
         },
       ]}
       // The function call when a item in reproductionList is clicked
-      onClickItemListReproduction={(id, playing) => {}}
+      onClickItemListReproduction={(id, playing) => {
+        return {
+          id,
+          playing,
+        };
+      }}
       // The function is call when the video finish
       onEnded={() => {}}
       // The function is call when the video is playing (One time for frame)
       onTimeUpdate={() => {}}
+      // Enable the orverlay when player is paused
+      overlayEnabled
+      // Enabled the auto clode controlls of player
+      autoControllCloseEnabled={false}
     />
   </div>,
   document.getElementById('root'),

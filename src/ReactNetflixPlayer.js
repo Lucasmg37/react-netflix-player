@@ -236,10 +236,25 @@ export default function ReactNetflixPlayer({
     setProgress(videoComponent.current.currentTime - seconds);
   };
 
-  const liberarVideo = () => {
-    alteraStatusVideo();
-    setVideoReady(true);
-    onCanPlay();
+  const startVideo = () => {
+    try {
+      alteraStatusVideo();
+      setVideoReady(true);
+
+      setPlaying(false);
+
+      if (autoPlay) {
+        videoComponent.current.play();
+        videoComponent.current.muted = false;
+        setPlaying(true);
+      }
+
+      if (onCanPlay) {
+        onCanPlay();
+      }
+    } catch (err) {
+      setPlaying(false);
+    }
   };
 
   const erroVideo = () => {
@@ -515,11 +530,12 @@ export default function ReactNetflixPlayer({
         ref={videoComponent}
         src={src}
         controls={false}
-        autoPlay={autoPlay}
-        onCanPlay={() => liberarVideo()}
+        // autoPlay={autoPlay}
+        onCanPlay={() => startVideo()}
         onTimeUpdate={timeUpdate}
         onError={erroVideo}
         onEnded={onEndedFunction}
+        muted
       />
 
       <Controlls

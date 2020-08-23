@@ -52,7 +52,7 @@ ReactDOM.render(
       // Enable the orverlay when player is paused
       overlayEnabled
       // Enabled the auto clode controlls of player
-      autoControllCloseEnabled={false}
+      autoControllCloseEnabled
     />
   </div>,
   document.getElementById('root'),

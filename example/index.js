@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactNetflixPlayer from '../src/ReactNetflixPlayer';
+import ReactNetflixPlayer from '../src';
 
 ReactDOM.render(
   <div>
     <ReactNetflixPlayer
       // Vídeo Link - Just data is required
-      // src="http://lucasjunior.com.br/teste.mp4"
-      src="http://rokusan.papepi.club/launch_hd/189007.mp4"
+      src="http://lucasjunior.com.br/teste.mp4"
       // src={"http://videoinvalid"}
       title="Dragon Ball Z"
       subTitle="Opening"
@@ -53,6 +52,7 @@ ReactDOM.render(
       overlayEnabled
       // Enabled the auto clode controlls of player
       autoControllCloseEnabled
+      // subtitleMedia="/teste.vtt"
     />
   </div>,
   document.getElementById('root'),

@@ -61,6 +61,8 @@ export default function ReactNetflixPlayer({
 
   overlayEnabled = true,
   autoControllCloseEnabled = true,
+
+  // subtitleMedia,
 }) {
   // Referências
   const videoComponent = useRef(null);
@@ -84,6 +86,7 @@ export default function ReactNetflixPlayer({
   const [showControlls, setShowControlls] = useState(!autoControllCloseEnabled);
   const [showInfo, setShowInfo] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
+  const [started, setStarted] = useState(false);
 
   const [showControllVolume, setShowControllVolume] = useState(false);
   const [showQuallity, setShowQuallity] = useState(false);
@@ -174,10 +177,6 @@ export default function ReactNetflixPlayer({
     setProgress(position);
   };
 
-  const alteraStatusVideo = () => {
-    setDuration(videoComponent.current.duration);
-  };
-
   const play = () => {
     setPlaying(!playing);
 
@@ -238,15 +237,17 @@ export default function ReactNetflixPlayer({
 
   const startVideo = () => {
     try {
-      alteraStatusVideo();
+      setDuration(videoComponent.current.duration);
       setVideoReady(true);
 
-      setPlaying(false);
+      if (!started) {
+        setStarted(true);
+        setPlaying(false);
 
-      if (autoPlay) {
-        videoComponent.current.play();
-        videoComponent.current.muted = false;
-        setPlaying(true);
+        if (autoPlay) {
+          videoComponent.current.play();
+          setPlaying(!videoComponent.current.paused);
+        }
       }
 
       if (onCanPlay) {
@@ -530,13 +531,13 @@ export default function ReactNetflixPlayer({
         ref={videoComponent}
         src={src}
         controls={false}
-        // autoPlay={autoPlay}
         onCanPlay={() => startVideo()}
         onTimeUpdate={timeUpdate}
         onError={erroVideo}
         onEnded={onEndedFunction}
-        muted
-      />
+      >
+        {/* <track label="English" kind="subtitles" srcLang="en" src={subtitleMedia} default /> */}
+      </video>
 
       <Controlls
         show={showControlls === true && videoReady === true && error === false}

@@ -42,6 +42,17 @@ export const Container = styled.div`
     max-width: 100% !important;
     cursor: none;
     opacity: ${props => (props.hideVideo ? 0 : 1)};
+
+    &::cue {
+      color: #eee;
+      z-index: 4;
+      text-shadow: #222 0 0 5px;
+      background: none;
+      font-family: ${props =>
+        props.fontFamily
+          ? props.fontFamily
+          : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"};
+    }
   }
 
   ${props =>

@@ -52,6 +52,11 @@ ReactDOM.render(
       overlayEnabled
       // Enabled the auto clode controlls of player
       autoControllCloseEnabled
+      // Style
+      primaryColor="#03dffc"
+      secundaryColor="#ffffff"
+      fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+
       // subtitleMedia="/teste.vtt"
     />
   </div>,

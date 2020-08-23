@@ -22,6 +22,7 @@
  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-como-utiliza">Como Utilizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-propriedades">Propriedades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-estilizando">Estilizando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -39,7 +40,7 @@
 7. Informações da mídia em execução;
 8. Playback Rate, Possibilitando alterar a velocidade de Reprodução;
 9. Sistema de ocultação dos controles mediante tempo de espera;
-10. Customização de cor (Feature);
+10. Customização de cor e fonte;
 11. Tratamento de erros.
 
 ### 🧱 Tecnologias
@@ -48,7 +49,9 @@ No desenvolvimento desse projeto foi ultilizado
   
  - [React](https://pt-br.reactjs.org/)
  
- - [Sass](https://sass-lang.com/)
+ - <s>[Sass](https://sass-lang.com/)</s>
+
+ - [Styled Components](https://styled-components.com/)
  
  - [Babel](https://babeljs.io/)
 
@@ -103,6 +106,18 @@ Se não for enviado, nenhuma informação será apresentada na barra de controle
 
 Texto auxiliar ao parâmetro de _titleMedia_, sua informação será exibida ao lado do título se informada.
 
+### overlayEnabled: true
+
+Informa se o modo StandyBy estará ativo. (Tela coninformações do vídeo no modo PAUSADO)
+
+Informando _false_, o player não apresenta a tela.
+
+### autoControllCloseEnabled: true
+
+Informe se os controles do player devem se auto ocultar.
+
+Informando _false_ os controles ficarão fixos em tela durante todo o vídeo.
+
 ### fullPlayer: true
 
 Parâmetro informa se player deve ocupar toda a área da WebView, por padrão é setado como _true_
@@ -154,25 +169,25 @@ Os itens devem ser informados como objetos
 
 Função disparada no momento em que o vídeo se tornar pronto para reprodução.
 
-Ela tem a mesma função do evento _onCanPlay()_ da tag <video/>, recebendo os mesmo parâmetros da função.
+Ela tem a mesma função do evento _onCanPlay()_ da tag `<video>`, recebendo os mesmo parâmetros da função.
 
 ### onTimeUpdate: function()
 
 Função disparada a cada alteração de frames do vídeo.
 
-Ela tem a mesma função do evento _onTimeUpdate()_ da tag <video/>, recebendo os mesmo parâmetros da função.
+Ela tem a mesma função do evento _onTimeUpdate()_ da tag `<video>`, recebendo os mesmo parâmetros da função.
 
 ### onEnded: function()
 
 Função disparada ao término do vídeo
 
-Ela tem a mesma função do evento _onEnded()_ da tag <video/>, recebendo os mesmo parâmetros da função.
+Ela tem a mesma função do evento _onEnded()_ da tag `<video>`, recebendo os mesmo parâmetros da função.
 
 ### onErrorVideo:  function()
 
 Função disparada quando um erro acontecer na reprodução/busca do vídeo.
 
-Ela tem a mesma função do evento _onErrorVideo()_ da tag <video/>, recebendo os mesmo parâmetros da função.
+Ela tem a mesma função do evento _onErrorVideo()_ da tag `<video>`, recebendo os mesmo parâmetros da função.
 
 ### onNextClick: function()
 
@@ -196,6 +211,27 @@ Array com as qualidades da mídia em execução.
 
 Não deve ser implemtado na atual versão do Player
 
+## 💅 Estilizando
+
+Para alterar as cores do Player e fontes, utilize os seguintes parâmetros.
+
+### primaryColor '#HEX'
+
+Cor de destaque para os intens primários, a cor padrão é a _#03dffc_ para alterar informe a cor desejada em _hexadecimal_, _rgb_ ou _rgba_.
+
+### primaryColor '#HEX'
+
+Cor de destaque para os intens secundários, a cor padrão é a _#ffffff_ para alterar informe a cor desejada em _hexadecimal_, _rgb_ ou _rgba_.
+
+### fontFamily 'Font'
+
+Fonte informada para *todos* os textos do player
+
+Valor padrão: 
+
+```
+-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+```
 
 ## 🧨 Eventos
 

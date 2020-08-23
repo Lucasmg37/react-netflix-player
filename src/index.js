@@ -56,11 +56,13 @@ export default function ReactNetflixPlayer({
   qualities = [],
   onChangeQuality = [],
   playbackRateEnable = true,
-  primaryColor = '#03dffc',
-  secundaryColor = '#ffffff',
-
   overlayEnabled = true,
   autoControllCloseEnabled = true,
+
+  // Styles
+  primaryColor = '#03dffc',
+  secundaryColor = '#ffffff',
+  fontFamily = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
 
   // subtitleMedia,
 }) {
@@ -519,6 +521,7 @@ export default function ReactNetflixPlayer({
       onDoubleClick={chooseFullScreen}
       fullPlayer={fullPlayer}
       hideVideo={!!error}
+      fontFamily={fontFamily}
     >
       {(videoReady === false || (waitingBuffer === true && playing === true)) && !error && !end && renderLoading()}
 

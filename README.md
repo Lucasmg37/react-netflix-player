@@ -219,7 +219,7 @@ Para alterar as cores do Player e fontes, utilize os seguintes parâmetros.
 
 Cor de destaque para os intens primários, a cor padrão é a _#03dffc_ para alterar informe a cor desejada em _hexadecimal_, _rgb_ ou _rgba_.
 
-### primaryColor '#HEX'
+### secundaryColor '#HEX'
 
 Cor de destaque para os intens secundários, a cor padrão é a _#ffffff_ para alterar informe a cor desejada em _hexadecimal_, _rgb_ ou _rgba_.
 

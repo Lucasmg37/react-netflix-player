@@ -41,7 +41,7 @@
 8. Playback Rate, Possibilitando alterar a velocidade de Reprodução;
 9. Sistema de ocultação dos controles mediante tempo de espera;
 10. Customização de cor e fonte;
-11. Tratamento de erros.
+11. Tratamento de erros;
 12. Disponível em Inglês e Português.
 
 ### 🧱 Tecnologias
@@ -113,11 +113,11 @@ Se não for enviado, nenhuma informação será apresentada na barra de controle
 
 Texto auxiliar ao parâmetro de _titleMedia_, sua informação será exibida ao lado do título se informada.
 
-### playerLanguage: idiom
+### playerLanguage: language
 
-Informa em qual idioma os textos do player devem ser mostrados. Por padrão os textos são apresentados em Português.
+Informa em qual língua os textos do player devem ser mostrados. Por padrão os textos são apresentados em Português.
 
-Idiomas disponíveis: pt (Português) e en (Inglês)
+Línguas disponíveis: pt (Português) e en (Inglês)
 
 👋 Hey! Sabe escrever em outro idioma? Vai ser um prazer receber a sua contribuição.
 
@@ -373,7 +373,7 @@ Em pouco tempo você será retornado.
 ## ✌️ Contribuidores
 
 | [<img src="https://avatars3.githubusercontent.com/u/38473739?s=115" width="115"><br><small>@Prophetaa</small>](https://github.com/Prophetaa) | [<img src="https://avatars0.githubusercontent.com/u/32423942?s=115"><br><sub>@lfoliveir4</sub>](https://github.com/lfoliveir4)  |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | 
 
 ## 📝 Licença
 Este projeto esta sobe a licença MIT.

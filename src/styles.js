@@ -221,7 +221,22 @@ export const Controlls = styled.div`
       color: transparent;
     }
 
-    &::-webkit-slider-thumb,
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: ${props => props.primaryColor};
+      cursor: pointer;
+
+      outline: none !important;
+      border-color: transparent;
+      border: 0 !important;
+      box-shadow: none !important;
+      box-sizing: none;
+    }
+
     &::-moz-range-thumb {
       -webkit-appearance: none;
       border: none;
@@ -436,7 +451,16 @@ export const VolumeControll = styled.div`
       );
       width: 70px;
 
-      &::-webkit-slider-thumb,
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: ${props => props.primaryColor};
+        cursor: pointer;
+      }
+
       &::-moz-range-thumb {
         -webkit-appearance: none;
         border: none;

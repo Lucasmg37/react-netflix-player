@@ -22,7 +22,7 @@
  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-como-utiliza">Como Utilizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-propriedades">Propriedades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
- <a href="#-estilizando">Estilizando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-estilização">Estilização</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -31,10 +31,10 @@
 
 ### 📦 Recursos implementados
 
-1. Reprodução de vídeos com Loading e Memória temporária;
-2. Listagem de lista de reprodução com marcação do vídeo em atual;
+1. Reprodução de vídeos com Loading e Memória temporária (Buffer);
+2. Listagem de lista de reprodução com marcação do vídeo atual e auto sequência;
 3. Ação para prosseguir para o próximo item;
-4. Ação definida ao fim do vídeo;
+4. Tratamento de evento de término de vídeo;
 5. Recursos de Play/Pause, Avançar/Retroceder e FullScreen;
 6. Suporte a múltiplos links de reprodução;
 7. Informações da mídia em execução;
@@ -65,7 +65,13 @@ Qualidade de Código
 
 ### ⚙ Como utilizar
 
-Em seu projeto react, execute o comando ```npm install react-netflix-player``` para adicionar o react-netflix-player em seu projeto.
+Adicione o react-netflix-player em seu projeto executando:
+
+```npm install react-netflix-player```
+
+ou 
+
+```yarn add react-netflix-player```
 
 Após realize o _import_ do componente no arquivo que deseja adicionar o player
 
@@ -98,9 +104,9 @@ Texto auxiliar ao parâmetro de _title_, sua informação será exibida abaixo d
 
 ### titleMedia: string
 
-Texto localizado na barra de controles, seguindo o design da Netflix, este campo contém o Título da Produção em andamento, pode ser usado para inserir o nome da lista de reprodução.
+Texto localizado na barra de controles, seguindo o design da Netflix, este campo contém o Título da Mídia em reprodução ou o nome da Playlists.
 
-Se não for enviado, nenhuma informação será apresentada na barra de controles
+Se não for enviado, nenhuma informação será apresentada na barra de controles.
 
 ### extraInfoMedia: string
 
@@ -108,13 +114,13 @@ Texto auxiliar ao parâmetro de _titleMedia_, sua informação será exibida ao 
 
 ### overlayEnabled: true
 
-Informa se o modo StandyBy estará ativo. (Tela coninformações do vídeo no modo PAUSADO)
+Informa se o modo StandyBy estará ativo. (Tela com informações do vídeo no modo PAUSADO)
 
-Informando _false_, o player não apresenta a tela.
+Informando _false_, o player não apresentará a tela.
 
 ### autoControllCloseEnabled: true
 
-Informe se os controles do player devem se auto ocultar.
+Informa se os controles do player devem se auto ocultar.
 
 Informando _false_ os controles ficarão fixos em tela durante todo o vídeo.
 
@@ -130,7 +136,9 @@ Informa se o botão de voltar ⬅ será visível quando os controles estiverem a
 
 ### autoPlay: false
 
-Informa se o vídeo deverá iniciar automáticamente, por padrão o valor é _false_
+Informa se o vídeo deverá iniciar automáticamente, por padrão o valor é _false_;
+
+Obs: Funcionalidade pode apresentar problemas nas versões mas recentes do navegador Chrome, que bloqueia o autoplay de vídeos se não existir uma interação do usuário.
 
 ### startPosition: 0
 
@@ -144,7 +152,7 @@ Observações: As opções não podem ser alteradas. Disponíveis as velocidades
 
 ### dataNext: {}
 
-Objeto com os dados a serem redenizados na área de *Próximo Vídeo*, este parâmetro não é obrigatório para utilizar a funcionalidade. É possível enviar somente a função a ser executada.
+Objeto com os dados a serem renderizados na área de *Próximo Vídeo*, este parâmetro não é obrigatório para utilizar a funcionalidade. É possível enviar somente a função a ser executada.
 
 ```
     {
@@ -203,7 +211,7 @@ Função disparada ao fechar o vídeo
 
 Observações: O Fechar vídeo só estará disponível enquanto o vídeo não estiver pronto para reprodução.
 
-Ele foi implementado como fulga do usuário caso o vídeo demore muito a iniciar. O parâmetro não é obrigatório e a sua ausência não remove o ícone de fechar, sendo aconselhável a sua implementação.
+Ele foi implementado como rota de fulga do usuário caso o vídeo demore muito a iniciar. O parâmetro não é obrigatório e a sua ausência não remove o ícone de fechar, sendo aconselhável a sua implementação.
 
 ### qualities: [] (BETA)
 
@@ -211,7 +219,7 @@ Array com as qualidades da mídia em execução.
 
 Não deve ser implemtado na atual versão do Player
 
-## 💅 Estilizando
+## 💅 Estilização
 
 Para alterar as cores do Player e fontes, utilize os seguintes parâmetros.
 
@@ -245,23 +253,23 @@ Caso ocorra algum erro com o vídeo em execução, será renderizado a informaç
 
 ### Controles
 
-Quando o mouse não se move por mais de 5 segundos, automáticamente os controlles são ocultados em tela, voltando a aparecer ao mover o cursor do mouse.
+Quando o mouse não se move por mais de 5 segundos, automáticamente os controlles são ocultados em tela, voltando a aparecer ao mover o cursor.
 
 ### StandBy
 
-O standby, é uma tela visível quando o vídeo está pausado e não existe moviementos do cursor de mouse.
+O standby, é uma tela visível quando o vídeo está pausado e não existe movimentos do cursor.
 
-Ao mover o mouse, ou executar o play pelo *space* o modo é desativado
+Ao mover o mouse, ou executar o play pelo *space* o modo é desativado.
 
 ### Loading
 
-Quando o vídeo está  buscando frames para reprodução e não existem frames suficientes o loading é ativado
+Quando o vídeo está  buscando frames para reprodução e não existem frames suficientes o loading é ativado.
 
 ## 🕹 Controles
 
 ### Double Click
 
-Coloca player em modo de Tela Cheia ou Sai do modo de tela cheia
+Ativa/Desativa o FullScreen (Tela cheia).
 
 ### Space
 
@@ -295,11 +303,12 @@ Player PAUSADO em estado de _standby_, as informações do título são renderiz
 Para testar/desenvolver o projeto siga os seguintes passos.
 
 ### 📦 Requisitos
-NodeJs [⬇ Baixe aqui.](https://nodejs.org/en/download/)
+
+yarn [⬇ Baixe aqui.](https://yarnpkg.com/)
 
 Git [⬇ Baixe aqui.](https://git-scm.com/)
 
-Com o node instalado, faça o clone do projeto
+Com o yarn instalado, faça o clone do projeto
 
 ```
     git clone https://github.com/Lucasmg37/react-netflix-player
@@ -308,7 +317,7 @@ Com o node instalado, faça o clone do projeto
 Navegue até a pasta do projeto e instale  as dependências
 
 ```
-    npm install
+    yarn
 ```
 
 Terminado, você já pode começar a desenvolver
@@ -319,7 +328,7 @@ Para rodar a aplicação, execute
 
 
 ```
-    npm start
+    yarn start
 ```
 
 Um servidor local estará disponível para visualização
@@ -334,7 +343,7 @@ do componente para um endereço válido.
 Para fazer o build, execute
 
 ```
-    npm run build
+    yarn run build
 ```
 
 O arquivo final estará disponível na pasta *dist*

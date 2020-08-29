@@ -42,6 +42,7 @@
 9. Sistema de ocultação dos controles mediante tempo de espera;
 10. Customização de cor e fonte;
 11. Tratamento de erros.
+12. Disponível em Inglês e Português.
 
 ### 🧱 Tecnologias
 
@@ -111,6 +112,14 @@ Se não for enviado, nenhuma informação será apresentada na barra de controle
 ### extraInfoMedia: string
 
 Texto auxiliar ao parâmetro de _titleMedia_, sua informação será exibida ao lado do título se informada.
+
+### playerLanguage: idiom
+
+Informa em qual idioma os textos do player devem ser mostrados. Por padrão os textos são apresentados em Português.
+
+Idiomas disponíveis: pt (Português) e en (Inglês)
+
+👋 Hey! Sabe escrever em outro idioma? Vai ser um prazer receber a sua contribuição.
 
 ### overlayEnabled: true
 
@@ -361,8 +370,12 @@ Em pouco tempo você será retornado.
 
 > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
 
+## ✌️ Contribuidores
+
+| [<img src="https://avatars3.githubusercontent.com/u/38473739?s=115" width="115"><br><small>@Prophetaa</small>](https://github.com/Prophetaa) | [<img src="https://avatars0.githubusercontent.com/u/32423942?s=115"><br><sub>@lfoliveir4</sub>](https://github.com/lfoliveir4)  |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+
 ## 📝 Licença
 Este projeto esta sobe a licença MIT.
-
 
 Feito com ❤ e ☕ por Lucas Dias. 👋🏽 [Entre em contato!](https://www.linkedin.com/in/lucas-junior/)

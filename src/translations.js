@@ -1,7 +1,7 @@
 const translations = {
   en: {
     translation: {
-      youAreWatching: 'You\'re watching',
+      youAreWatching: "You're watching",
       paused: 'Paused',
       tryAccessingOtherQuality: 'Try changing the image quality',
       goBack: 'Go Back',
@@ -23,7 +23,6 @@ const translations = {
       playError: 'Ocorreu um erro ao tentar reproduzir este vídeo -_-',
     },
   },
-
 };
 
 export default translations;

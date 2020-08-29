@@ -22,6 +22,7 @@
  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-como-utiliza">Como Utilizar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-propriedades">Propriedades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-estilização">Estilização</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-eventos">Eventos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-modos">Modos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
  <a href="#-controles">Controles</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -30,17 +31,18 @@
 
 ### 📦 Recursos implementados
 
-1. Reprodução de vídeos com Loading e Memória temporária;
-2. Listagem de lista de reprodução com marcação do vídeo em atual;
+1. Reprodução de vídeos com Loading e Memória temporária (Buffer);
+2. Listagem de lista de reprodução com marcação do vídeo atual e auto sequência;
 3. Ação para prosseguir para o próximo item;
-4. Ação definida ao fim do vídeo;
+4. Tratamento de evento de término de vídeo;
 5. Recursos de Play/Pause, Avançar/Retroceder e FullScreen;
 6. Suporte a múltiplos links de reprodução;
 7. Informações da mídia em execução;
 8. Playback Rate, Possibilitando alterar a velocidade de Reprodução;
 9. Sistema de ocultação dos controles mediante tempo de espera;
-10. Customização de cor (Feature);
-11. Tratamento de erros.
+10. Customização de cor e fonte;
+11. Tratamento de erros;
+12. Disponível em Inglês e Português.
 
 ### 🧱 Tecnologias
 
@@ -48,7 +50,9 @@ No desenvolvimento desse projeto foi ultilizado
   
  - [React](https://pt-br.reactjs.org/)
  
- - [Sass](https://sass-lang.com/)
+ - <s>[Sass](https://sass-lang.com/)</s>
+
+ - [Styled Components](https://styled-components.com/)
  
  - [Babel](https://babeljs.io/)
 
@@ -62,7 +66,13 @@ Qualidade de Código
 
 ### ⚙ Como utilizar
 
-Em seu projeto react, execute o comando ```npm install react-netflix-player``` para adicionar o react-netflix-player em seu projeto.
+Adicione o react-netflix-player em seu projeto executando:
+
+```npm install react-netflix-player```
+
+ou 
+
+```yarn add react-netflix-player```
 
 Após realize o _import_ do componente no arquivo que deseja adicionar o player
 
@@ -95,13 +105,33 @@ Texto auxiliar ao parâmetro de _title_, sua informação será exibida abaixo d
 
 ### titleMedia: string
 
-Texto localizado na barra de controles, seguindo o design da Netflix, este campo contém o Título da Produção em andamento, pode ser usado para inserir o nome da lista de reprodução.
+Texto localizado na barra de controles, seguindo o design da Netflix, este campo contém o Título da Mídia em reprodução ou o nome da Playlists.
 
-Se não for enviado, nenhuma informação será apresentada na barra de controles
+Se não for enviado, nenhuma informação será apresentada na barra de controles.
 
 ### extraInfoMedia: string
 
 Texto auxiliar ao parâmetro de _titleMedia_, sua informação será exibida ao lado do título se informada.
+
+### playerLanguage: language
+
+Informa em qual língua os textos do player devem ser mostrados. Por padrão os textos são apresentados em Português.
+
+Línguas disponíveis: pt (Português) e en (Inglês)
+
+👋 Hey! Sabe escrever em outro idioma? Vai ser um prazer receber a sua contribuição.
+
+### overlayEnabled: true
+
+Informa se o modo StandyBy estará ativo. (Tela com informações do vídeo no modo PAUSADO)
+
+Informando _false_, o player não apresentará a tela.
+
+### autoControllCloseEnabled: true
+
+Informa se os controles do player devem se auto ocultar.
+
+Informando _false_ os controles ficarão fixos em tela durante todo o vídeo.
 
 ### fullPlayer: true
 
@@ -115,7 +145,9 @@ Informa se o botão de voltar ⬅ será visível quando os controles estiverem a
 
 ### autoPlay: false
 
-Informa se o vídeo deverá iniciar automáticamente, por padrão o valor é _false_
+Informa se o vídeo deverá iniciar automáticamente, por padrão o valor é _false_;
+
+Obs: Funcionalidade pode apresentar problemas nas versões mas recentes do navegador Chrome, que bloqueia o autoplay de vídeos se não existir uma interação do usuário.
 
 ### startPosition: 0
 
@@ -129,7 +161,7 @@ Observações: As opções não podem ser alteradas. Disponíveis as velocidades
 
 ### dataNext: {}
 
-Objeto com os dados a serem redenizados na área de *Próximo Vídeo*, este parâmetro não é obrigatório para utilizar a funcionalidade. É possível enviar somente a função a ser executada.
+Objeto com os dados a serem renderizados na área de *Próximo Vídeo*, este parâmetro não é obrigatório para utilizar a funcionalidade. É possível enviar somente a função a ser executada.
 
 ```
     {
@@ -154,25 +186,25 @@ Os itens devem ser informados como objetos
 
 Função disparada no momento em que o vídeo se tornar pronto para reprodução.
 
-Ela tem a mesma função do evento _onCanPlay()_ da tag <video/>, recebendo os mesmo parâmetros da função.
+Ela tem a mesma função do evento _onCanPlay()_ da tag `<video>`, recebendo os mesmo parâmetros da função.
 
 ### onTimeUpdate: function()
 
 Função disparada a cada alteração de frames do vídeo.
 
-Ela tem a mesma função do evento _onTimeUpdate()_ da tag <video/>, recebendo os mesmo parâmetros da função.
+Ela tem a mesma função do evento _onTimeUpdate()_ da tag `<video>`, recebendo os mesmo parâmetros da função.
 
 ### onEnded: function()
 
 Função disparada ao término do vídeo
 
-Ela tem a mesma função do evento _onEnded()_ da tag <video/>, recebendo os mesmo parâmetros da função.
+Ela tem a mesma função do evento _onEnded()_ da tag `<video>`, recebendo os mesmo parâmetros da função.
 
 ### onErrorVideo:  function()
 
 Função disparada quando um erro acontecer na reprodução/busca do vídeo.
 
-Ela tem a mesma função do evento _onErrorVideo()_ da tag <video/>, recebendo os mesmo parâmetros da função.
+Ela tem a mesma função do evento _onErrorVideo()_ da tag `<video>`, recebendo os mesmo parâmetros da função.
 
 ### onNextClick: function()
 
@@ -188,7 +220,7 @@ Função disparada ao fechar o vídeo
 
 Observações: O Fechar vídeo só estará disponível enquanto o vídeo não estiver pronto para reprodução.
 
-Ele foi implementado como fulga do usuário caso o vídeo demore muito a iniciar. O parâmetro não é obrigatório e a sua ausência não remove o ícone de fechar, sendo aconselhável a sua implementação.
+Ele foi implementado como rota de fulga do usuário caso o vídeo demore muito a iniciar. O parâmetro não é obrigatório e a sua ausência não remove o ícone de fechar, sendo aconselhável a sua implementação.
 
 ### qualities: [] (BETA)
 
@@ -196,6 +228,27 @@ Array com as qualidades da mídia em execução.
 
 Não deve ser implemtado na atual versão do Player
 
+## 💅 Estilização
+
+Para alterar as cores do Player e fontes, utilize os seguintes parâmetros.
+
+### primaryColor '#HEX'
+
+Cor de destaque para os intens primários, a cor padrão é a _#03dffc_ para alterar informe a cor desejada em _hexadecimal_, _rgb_ ou _rgba_.
+
+### secundaryColor '#HEX'
+
+Cor de destaque para os intens secundários, a cor padrão é a _#ffffff_ para alterar informe a cor desejada em _hexadecimal_, _rgb_ ou _rgba_.
+
+### fontFamily 'Font'
+
+Fonte informada para *todos* os textos do player
+
+Valor padrão: 
+
+```
+-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+```
 
 ## 🧨 Eventos
 
@@ -209,23 +262,23 @@ Caso ocorra algum erro com o vídeo em execução, será renderizado a informaç
 
 ### Controles
 
-Quando o mouse não se move por mais de 5 segundos, automáticamente os controlles são ocultados em tela, voltando a aparecer ao mover o cursor do mouse.
+Quando o mouse não se move por mais de 5 segundos, automáticamente os controlles são ocultados em tela, voltando a aparecer ao mover o cursor.
 
 ### StandBy
 
-O standby, é uma tela visível quando o vídeo está pausado e não existe moviementos do cursor de mouse.
+O standby, é uma tela visível quando o vídeo está pausado e não existe movimentos do cursor.
 
-Ao mover o mouse, ou executar o play pelo *space* o modo é desativado
+Ao mover o mouse, ou executar o play pelo *space* o modo é desativado.
 
 ### Loading
 
-Quando o vídeo está  buscando frames para reprodução e não existem frames suficientes o loading é ativado
+Quando o vídeo está  buscando frames para reprodução e não existem frames suficientes o loading é ativado.
 
 ## 🕹 Controles
 
 ### Double Click
 
-Coloca player em modo de Tela Cheia ou Sai do modo de tela cheia
+Ativa/Desativa o FullScreen (Tela cheia).
 
 ### Space
 
@@ -259,11 +312,12 @@ Player PAUSADO em estado de _standby_, as informações do título são renderiz
 Para testar/desenvolver o projeto siga os seguintes passos.
 
 ### 📦 Requisitos
-NodeJs [⬇ Baixe aqui.](https://nodejs.org/en/download/)
+
+yarn [⬇ Baixe aqui.](https://yarnpkg.com/)
 
 Git [⬇ Baixe aqui.](https://git-scm.com/)
 
-Com o node instalado, faça o clone do projeto
+Com o yarn instalado, faça o clone do projeto
 
 ```
     git clone https://github.com/Lucasmg37/react-netflix-player
@@ -272,7 +326,7 @@ Com o node instalado, faça o clone do projeto
 Navegue até a pasta do projeto e instale  as dependências
 
 ```
-    npm install
+    yarn
 ```
 
 Terminado, você já pode começar a desenvolver
@@ -283,7 +337,7 @@ Para rodar a aplicação, execute
 
 
 ```
-    npm start
+    yarn start
 ```
 
 Um servidor local estará disponível para visualização
@@ -298,7 +352,7 @@ do componente para um endereço válido.
 Para fazer o build, execute
 
 ```
-    npm run build
+    yarn run build
 ```
 
 O arquivo final estará disponível na pasta *dist*
@@ -316,8 +370,12 @@ Em pouco tempo você será retornado.
 
 > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
 
+## ✌️ Contribuidores
+
+| [<img src="https://avatars3.githubusercontent.com/u/38473739?s=115" width="115"><br><small>@Prophetaa</small>](https://github.com/Prophetaa) | [<img src="https://avatars0.githubusercontent.com/u/32423942?s=115"><br><sub>@lfoliveir4</sub>](https://github.com/lfoliveir4)  |
+| :---: | :---: | 
+
 ## 📝 Licença
 Este projeto esta sobe a licença MIT.
-
 
 Feito com ❤ e ☕ por Lucas Dias. 👋🏽 [Entre em contato!](https://www.linkedin.com/in/lucas-junior/)

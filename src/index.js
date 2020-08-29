@@ -18,7 +18,6 @@ import {
   FaRedoAlt,
 } from 'react-icons/fa';
 import { FiCheck, FiX } from 'react-icons/fi';
-<<<<<<< HEAD
 import {
   Loading,
   StandyByInfo,
@@ -33,11 +32,24 @@ import {
   ItemListQuality,
 } from './styles';
 
+import translations from './translations';
+
+i18n.use(initReactI18next).init({
+  resources: translations,
+  lng: 'pt',
+  fallbackLng: 'pt',
+
+  interpolation: {
+    escapeValue: false,
+  },
+});
+
 export default function ReactNetflixPlayer({
   title = false,
   subTitle = false,
   titleMedia = false,
   extraInfoMedia = false,
+  playerLanguage = 'pt',
 
   fullPlayer = true,
   backButton = false,
@@ -69,52 +81,6 @@ export default function ReactNetflixPlayer({
 
   // subtitleMedia,
 }) {
-=======
-import translations from './translations';
-
-import './styles.scss';
-
-i18n.use(initReactI18next).init({
-  resources: translations,
-  lng: 'pt',
-  fallbackLng: 'pt',
-
-  interpolation: {
-    escapeValue: false,
-  },
-});
-
-export default function ReactNetflixPlayer(
-  {
-    title = false,
-    subTitle = false,
-    titleMedia = false,
-    extraInfoMedia = false,
-    playerLanguage = 'pt',
-    fullPlayer = true,
-    backButton = false,
-
-    src,
-    autoPlay = false,
-
-    onCanPlay = false,
-    onTimeUpdate = false,
-    onEnded = false,
-    onErrorVideo = false,
-    onNextClick = false,
-    onClickItemListReproduction = false,
-    onCrossClick = () => {
-    },
-    startPosition = 0,
-
-    dataNext = {},
-    reproductionList = [],
-    qualities = [],
-    onChangeQuality = [],
-    playbackRateEnable = true,
-  },
-) {
->>>>>>> master
   // Referências
   const videoComponent = useRef(null);
   const timerRef = useRef(null);
@@ -242,10 +208,7 @@ export default function ReactNetflixPlayer(
   };
 
   const onEndedFunction = () => {
-    if (
-      +startPosition === +videoComponent.current.duration
-      && !controlBackEnd
-    ) {
+    if (+startPosition === +videoComponent.current.duration && !controlBackEnd) {
       setControlBackEnd(true);
       videoComponent.current.currentTime = videoComponent.current.duration - 30;
       if (autoPlay) {
@@ -321,7 +284,7 @@ export default function ReactNetflixPlayer(
     setError(t('playError', { lng: playerLanguage }));
   };
 
-  const setMuttedAction = (value) => {
+  const setMuttedAction = value => {
     setMuted(value);
     setShowControlVolume(false);
     videoComponent.current.muted = value;
@@ -655,7 +618,7 @@ export default function ReactNetflixPlayer(
 
               {muted === false && (
                 <VolumeControll
-                  onMouseLeave={() => setShowControllVolume(false)}
+                  onMouseLeave={() => setShowControlVolume(false)}
                   className="item-control"
                   primaryColor={primaryColor}
                   percentVolume={volume}
@@ -677,28 +640,25 @@ export default function ReactNetflixPlayer(
                   )}
 
                   {volume >= 60 && (
-                    <FaVolumeUp
-                      onMouseEnter={() => setShowControllVolume(true)}
-                      onClick={() => setMuttedAction(true)}
-                    />
+                    <FaVolumeUp onMouseEnter={() => setShowControlVolume(true)} onClick={() => setMuttedAction(true)} />
                   )}
 
                   {volume < 60 && volume >= 10 && (
                     <FaVolumeDown
-                      onMouseEnter={() => setShowControllVolume(true)}
+                      onMouseEnter={() => setShowControlVolume(true)}
                       onClick={() => setMuttedAction(true)}
                     />
                   )}
 
                   {volume < 10 && volume > 0 && (
                     <FaVolumeOff
-                      onMouseEnter={() => setShowControllVolume(true)}
+                      onMouseEnter={() => setShowControlVolume(true)}
                       onClick={() => setMuttedAction(true)}
                     />
                   )}
 
                   {volume <= 0 && (
-                    <FaVolumeMute onMouseEnter={() => setShowControllVolume(true)} onClick={() => setVolumeAction(0)} />
+                    <FaVolumeMute onMouseEnter={() => setShowControlVolume(true)} onClick={() => setVolumeAction(0)} />
                   )}
                 </VolumeControll>
               )}
@@ -765,14 +725,13 @@ export default function ReactNetflixPlayer(
                 {showReproductionList && (
                   <ItemListReproduction>
                     <div>
-                      <div className="title">Lista de Reprodução</div>
+                      <div className="title">{t('playlist', { lng: playerLanguage })}</div>
                       <div ref={listReproduction} className="list-list-reproduction scroll-clean-player">
                         {reprodutionList.map((item, index) => (
                           <div
                             className={`item-list-reproduction ${item.playing && 'selected'}`}
-                            onClick={
-                              () => onClickItemListReproduction && onClickItemListReproduction(item.id, item.playing)
-                              // eslint-disable-next-line react/jsx-curly-newline
+                            onClick={() =>
+                              onClickItemListReproduction && onClickItemListReproduction(item.id, item.playing)
                             }
                           >
                             <div className="bold">
@@ -793,32 +752,16 @@ export default function ReactNetflixPlayer(
                 )}
               </div>
 
-<<<<<<< HEAD
               {qualities && qualities.length > 1 && (
-                <div className="item-control" onMouseLeave={() => setShowQuallity(false)}>
-                  {showQuallity === true && (
+                <div className="item-control" onMouseLeave={() => setShowQuality(false)}>
+                  {showQuality === true && (
                     <ItemListQuality>
                       <div>
                         {qualities &&
                           qualities.map(item => (
-=======
-                <div
-                  className="item-control"
-                  onMouseLeave={() => setShowReproductionList(false)}
-                >
-                  {showReproductionList && (
-                    <div className="item-component item-component-list-rep">
-                      <div className="content-list-reprodution">
-                        <div className="title">{t('playlist', { lng: playerLanguage })}</div>
-                        <div
-                          ref={listReproduction}
-                          className="list-list-reproduction scroll-clean-player"
-                        >
-                          {reproductionList.map((item, index) => (
->>>>>>> master
                             <div
                               onClick={() => {
-                                setShowQuallity(false);
+                                setShowQuality(false);
                                 onChangeQuality(item.id);
                               }}
                             >
@@ -832,62 +775,14 @@ export default function ReactNetflixPlayer(
                       <div className="box-connector" />
                     </ItemListQuality>
                   )}
-<<<<<<< HEAD
 
-                  <FaCog onMouseEnter={() => setShowQuallity(true)} />
-=======
-                  {reproductionList && reproductionList.length > 1 && (
-                    <FaClone
-                      onMouseEnter={() => setShowReproductionList(true)}
-                    />
-                  )}
-                </div>
-
-                {qualities && qualities.length > 1 && (
-                  <div
-                    className="item-control"
-                    onMouseLeave={() => setShowQuality(false)}
-                  >
-                    {showQuality === true && (
-                      <div className="list-quality-component">
-                        <div className="content">
-                          {qualities
-                          && qualities.map((item) => (
-                            <div
-                              onClick={() => {
-                                setShowQuality(false);
-                                onChangeQuality(item.id);
-                              }}
-                            >
-                              {item.prefix && <span>HD</span>}
-
-                              <span>{item.nome}</span>
-                              {item.playing && <FiCheck />}
-                            </div>
-                          ))}
-                        </div>
-                        <div className="box-connector" />
-                      </div>
-                    )}
-
-                    <FaCog onMouseEnter={() => setShowQuality(true)} />
-                  </div>
-                )}
-
-                <div className="item-control">
-                  {fullScreen === false && (
-                    <FaExpand onClick={enterFullScreen} />
-                  )}
-                  {fullScreen === true && (
-                    <FaCompress onClick={exitFullScreen} />
-                  )}
->>>>>>> master
+                  <FaCog onMouseEnter={() => setShowQuality(true)} />
                 </div>
               )}
 
               <div className="item-control">
-                {fullSreen === false && <FaExpand onClick={enterFullScreen} />}
-                {fullSreen === true && <FaCompress onClick={exitFullScreen} />}
+                {fullScreen === false && <FaExpand onClick={enterFullScreen} />}
+                {fullScreen === true && <FaCompress onClick={exitFullScreen} />}
               </div>
             </div>
           </div>

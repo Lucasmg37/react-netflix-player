@@ -12,13 +12,13 @@ ReactDOM.render(
       subTitle="Opening"
       titleMedia="Dragon Ball Z"
       extraInfoMedia="Opening"
+      // Text language of player
+      playerLanguage="pt"
       // Action when the button X (close) is clicked
       backButton={() => {}}
       // The player use the all viewport
       fullPlayer
-      // The video starts when the component is render
       autoPlay
-      // The start position video
       startPosition={0}
       // The info of the next video action
       dataNext={{ title: 'Não existe um próximo vídeo.' }}

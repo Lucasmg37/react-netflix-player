@@ -53,9 +53,11 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "i18next": "^19.7.0",
     "react": "^16.0.0",
     "react-icons": "^3.9.0",
     "react-dom": "^16.13.1",
+    "react-i18next": "^11.7.1",
     "styled-components": "^5.1.1"
   }
 }

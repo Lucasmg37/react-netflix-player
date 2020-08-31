@@ -1,6 +1,6 @@
 {
   "name": "react-netflix-player",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "React Video Player Based in Netflix Design",
   "main": "./dist/ReactNetflixPlayer.js",
   "license": "MIT",
@@ -25,9 +25,7 @@
     "printWidth": 120
   },
   "author": "Lucas Junior Dias",
-  "peerDependencies": {
-
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.21.0",
@@ -39,7 +37,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier" : "^6.11.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",

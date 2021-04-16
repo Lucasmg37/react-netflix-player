@@ -4,9 +4,6 @@
   "description": "React Video Player Based in Netflix Design",
   "main": "./dist/ReactNetflixPlayer.js",
   "license": "MIT",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack",

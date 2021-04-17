@@ -1,0 +1,5 @@
+{
+  "name": "react-netflix-player/ReactNetflixPlayer",
+  "private": true,
+  "module": "../esm/index.js"
+}

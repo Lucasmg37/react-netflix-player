@@ -3,3 +3,4 @@ demo
 .babelrc
 webpack.config.js
 example
+node_modules

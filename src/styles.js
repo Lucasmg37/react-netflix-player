@@ -18,6 +18,8 @@ const toUpOpacity = keyframes`
 `;
 
 export const Container = styled.div`
+  text-align: left;
+  
   & > * {
     outline: 0;
     box-sizing: border-box;

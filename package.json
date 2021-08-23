@@ -25,7 +25,10 @@
     "printWidth": 120
   },
   "author": "Lucas Junior Dias",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.13.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.21.0",
@@ -52,8 +55,6 @@
   },
   "dependencies": {
     "i18next": "^19.7.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.13.1",
     "react-i18next": "^11.7.1",
     "react-icons": "^3.9.0",
     "styled-components": "^5.1.1"

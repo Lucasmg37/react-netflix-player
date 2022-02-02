@@ -31,8 +31,7 @@ import {
   ItemListReproduction,
   ItemListQuality,
 } from './styles';
-
-import translations from './translations';
+import translations from '../../i18n';
 
 i18n.use(initReactI18next).init({
   resources: translations,
@@ -63,7 +62,7 @@ export default function ReactNetflixPlayer({
   onErrorVideo = false,
   onNextClick = false,
   onClickItemListReproduction = false,
-  onCrossClick = () => {},
+  onCrossClick = () => { },
   startPosition = 0,
 
   dataNext = {},

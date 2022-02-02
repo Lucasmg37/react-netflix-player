@@ -19,16 +19,16 @@ const toUpOpacity = keyframes`
 
 export const Container = styled.div`
   text-align: left;
-  
+
   & > * {
     outline: 0;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: ${props =>
-      props.fontFamily
-        ? props.fontFamily
-        : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"};
+    props.fontFamily
+      ? props.fontFamily
+      : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"};
   }
 
   width: 100%;
@@ -51,9 +51,9 @@ export const Container = styled.div`
       text-shadow: #222 0 0 5px;
       background: none;
       font-family: ${props =>
-        props.fontFamily
-          ? props.fontFamily
-          : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"};
+    props.fontFamily
+      ? props.fontFamily
+      : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"};
     }
   }
 

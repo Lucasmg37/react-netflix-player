@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
+  entry: './src/components/ReactNetflixPlayer/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'ReactNetflixPlayer.js',
@@ -25,6 +25,12 @@ module.exports = {
     ],
   },
   externals: {
-    react: 'commonjs react',
+    react: 'react',
+    'react-dom': 'ReactDOM',
+    'styled-components': 'styled-components',
+    'i18next': 'i18next',
+    'react-i18next': 'react-i18next',
+    'react-icons/fa': 'react-icons/fa',
+    'react-icons/fi': 'react-icons/fi',
   },
 };

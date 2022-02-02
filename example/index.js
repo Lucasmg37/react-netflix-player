@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactNetflixPlayer from '../src';
+import ReactNetflixPlayer from '../dist/ReactNetflixPlayer.js';
 
 ReactDOM.render(
   <div>
     <ReactNetflixPlayer
       // Vídeo Link - Just data is required
-      src="http://lucasjunior.com.br/teste.mp4"
+      src="https://storage.googleapis.com/webfundamentals-assets/videos/chrome.mp4"
       // src={"http://videoinvalid"}
       title="Dragon Ball Z"
       subTitle="Opening"
@@ -15,7 +15,7 @@ ReactDOM.render(
       // Text language of player
       playerLanguage="pt"
       // Action when the button X (close) is clicked
-      backButton={() => {}}
+      backButton={() => { }}
       // The player use the all viewport
       fullPlayer
       autoPlay
@@ -23,7 +23,7 @@ ReactDOM.render(
       // The info of the next video action
       dataNext={{ title: 'Não existe um próximo vídeo.' }}
       // The action call when the next video is clicked
-      onNextClick={() => {}}
+      onNextClick={() => { }}
       // The list reproduction data, will be render in this order
       reprodutionList={[
         {
@@ -45,9 +45,9 @@ ReactDOM.render(
         };
       }}
       // The function is call when the video finish
-      onEnded={() => {}}
+      onEnded={() => { }}
       // The function is call when the video is playing (One time for frame)
-      onTimeUpdate={() => {}}
+      onTimeUpdate={() => { }}
       // Enable the orverlay when player is paused
       overlayEnabled
       // Enabled the auto clode controlls of player
@@ -57,7 +57,7 @@ ReactDOM.render(
       secundaryColor="#ffffff"
       fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
 
-      // subtitleMedia="/teste.vtt"
+    // subtitleMedia="/teste.vtt"
     />
   </div>,
   document.getElementById('root'),

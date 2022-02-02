@@ -28,7 +28,7 @@ module.exports = {
     react: 'react',
     'react-dom': 'ReactDOM',
     'styled-components': 'styled-components',
-    'i18next': 'i18next',
+    i18next: 'i18next',
     'react-i18next': 'react-i18next',
     'react-icons/fa': 'react-icons/fa',
     'react-icons/fi': 'react-icons/fi',

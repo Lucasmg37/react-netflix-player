@@ -1,6 +1,6 @@
 {
   "name": "react-netflix-player",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "React Video Player Based in Netflix Design",
   "main": "./dist/ReactNetflixPlayer.js",
   "license": "MIT",
@@ -56,6 +56,8 @@
     "i18next": "^19.7.0",
     "react-i18next": "^11.7.1",
     "react-icons": "^3.9.0",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "react": "^17",
+    "react-dom": "^17"
   }
 }

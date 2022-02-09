@@ -1,5 +1,5 @@
-import enUs from './locales/en-us';
-import ptBr from './locales/pt-br';
+import enUs from './locales/enUs';
+import ptBr from './locales/ptBr';
 
 const translations = {
   pt: ptBr,

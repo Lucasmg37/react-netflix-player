@@ -1,4 +1,4 @@
-const enUs = {
+const ptBr = {
   translation: {
     youAreWatching: 'Você está assistindo',
     paused: 'Pausado',
@@ -11,4 +11,4 @@ const enUs = {
   },
 };
 
-export default enUs;
+export default ptBr;

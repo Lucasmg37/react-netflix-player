@@ -56,7 +56,9 @@ ReactDOM.render(
       primaryColor="#03dffc"
       secundaryColor="#ffffff"
       fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
-
+      // Playback Rate
+      playbackRateStart={3}
+      playbackRateOptions={['0.25', '0.5', '0.75', 'Normal', '1.25', '1.5', '2', '3']}
     // subtitleMedia="/teste.vtt"
     />
   </div>,

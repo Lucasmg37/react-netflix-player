@@ -78,6 +78,9 @@ export default function ReactNetflixPlayer({
   secundaryColor = '#ffffff',
   fontFamily = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
 
+  playbackRateOptions = ['0.25', '0.5', '0.75', 'Normal', '1.25', '1.5', '2'],
+  playbackRateStart = 1,
+
   // subtitleMedia,
 }) {
   // Referências
@@ -101,7 +104,7 @@ export default function ReactNetflixPlayer({
   const [waitingBuffer, setWaitingBuffer] = useState(false);
   const [showControls, setShowControls] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const [playbackRate, setPlaybackRate] = useState(1);
+  const [playbackRate, setPlaybackRate] = useState(playbackRateStart);
   const [started, setStarted] = useState(false);
 
   const [showControlVolume, setShowControlVolume] = useState(false);
@@ -109,8 +112,6 @@ export default function ReactNetflixPlayer({
   const [showDataNext, setShowDataNext] = useState(false);
   const [showPlaybackRate, setShowPlaybackRate] = useState(false);
   const [showReproductionList, setShowReproductionList] = useState(false);
-
-  const playbackRateOptions = ['0.25', '0.5', '0.75', 'Normal', '1.25', '1.5', '2'];
 
   const { t } = useTranslation();
 

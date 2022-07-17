@@ -1,29 +1,25 @@
 // webpack.config.js
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  mode: 'production',
   entry: './src/components/ReactNetflixPlayer/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'ReactNetflixPlayer.js',
-    libraryTarget: 'commonjs2',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env'],
-          },
-        },
-      },
-    ],
-  },
+	output: {
+		path: path.join(__dirname, "/dist"),
+		filename: "ReactNetflixPlayer.js",
+	},
+	module: {
+		rules: [
+			{
+				test: /\.(js|jsx)$/,
+				loader: "babel-loader",
+				exclude: /node_modules/,
+			},
+			{
+				test: /\.css$/,
+				use: ["style-loader", "css-loader"],
+			},
+		],
+	},
   externals: {
     react: 'react',
     'react-dom': 'ReactDOM',

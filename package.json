@@ -5,9 +5,8 @@
   "main": "./dist/ReactNetflixPlayer.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js",
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "webpack serve --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -26,38 +25,30 @@
   },
   "author": "Lucas Junior Dias",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.21.0",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^7.7.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "prettier": "^2.0.5",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.11.0"
-  },
-  "peerDependencies": {
-    "react": "^16 || ^17",
-    "react-dom": "^16 || ^17"
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.5.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
-    "i18next": "^19.7.0",
-    "react-i18next": "^11.7.1",
-    "react-icons": "^3.9.0",
-    "styled-components": "^5.1.1",
-    "react": "^17",
-    "react-dom": "^17"
+    "i18next": "^21.8.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^11.18.1",
+    "react-icons": "^4.4.0",
+    "styled-components": "^5.3.5"
   }
 }

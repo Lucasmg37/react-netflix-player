@@ -17,7 +17,13 @@ const toUpOpacity = keyframes`
   }
 `;
 
-export const Container = styled.div`
+export interface IContainerProps {
+  fullPlayer: boolean;
+  hideVideo: boolean;
+  fontFamily: string;
+}
+
+export const Container = styled.div<IContainerProps>`
   text-align: left;
 
   & > * {
@@ -26,9 +32,9 @@ export const Container = styled.div`
     margin: 0;
     padding: 0;
     font-family: ${props =>
-    props.fontFamily
-      ? props.fontFamily
-      : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"};
+      props.fontFamily
+        ? props.fontFamily
+        : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"};
   }
 
   width: 100%;
@@ -51,9 +57,9 @@ export const Container = styled.div`
       text-shadow: #222 0 0 5px;
       background: none;
       font-family: ${props =>
-    props.fontFamily
-      ? props.fontFamily
-      : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"};
+        props.fontFamily
+          ? props.fontFamily
+          : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"};
     }
   }
 
@@ -67,7 +73,13 @@ export const Container = styled.div`
     `}
 `;
 
-export const Controlls = styled.div`
+export interface IControlsProps {
+  show: boolean;
+  primaryColor: string;
+  progressVideo: number;
+}
+
+export const Controlls = styled.div<IControlsProps>`
   opacity: ${props => (props.show ? 1 : 0)};
   transform: ${props => (props.show ? 'scale(1)' : 'scale(1.2)')};
 
@@ -261,7 +273,19 @@ export const Controlls = styled.div`
   }
 `;
 
-export const VideoPreLoading = styled.div`
+export interface IVideoPreLoadingProps {
+  show: boolean;
+  colorTitle: string;
+  colorSubTitle: string;
+  colorIcon: string;
+  showError: boolean;
+  colorButtonError: string;
+  backgroundColorButtonError: string;
+  backgroundColorHoverButtonError: string;
+  colorHoverButtonError: string;
+}
+
+export const VideoPreLoading = styled.div<IVideoPreLoadingProps>`
   position: absolute;
   top: 0;
   width: 100%;
@@ -346,7 +370,13 @@ export const VideoPreLoading = styled.div`
   }
 `;
 
-export const StandyByInfo = styled.div`
+export interface IStandyByInfoProps {
+  show: boolean;
+  primaryColor: string;
+  secundaryColor: string;
+}
+
+export const StandyByInfo = styled.div<IStandyByInfoProps>`
   position: absolute;
   top: 0;
   background: rgba(0, 0, 0, 0.8);
@@ -423,7 +453,12 @@ export const Loading = styled.div`
   }
 `;
 
-export const VolumeControll = styled.div`
+export interface IVolumeControlProps {
+  primaryColor: string;
+  percentVolume: number;
+}
+
+export const VolumeControll = styled.div<IVolumeControlProps>`
   .volumn-controll {
     bottom: 70px;
     left: -50px;

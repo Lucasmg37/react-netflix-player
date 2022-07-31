@@ -343,22 +343,9 @@ Navegue até a pasta do projeto e instale as dependências
 
 Terminado, você já pode começar a desenvolver
 
-Na pasta _example_ coontém a implementação do player para testes
-
-Para rodar a aplicação, execute
-
-```
-    yarn start
-```
-
-Um servidor local estará disponível para visualização
-
-Geralmente o endereço será o _http://localhost:8080/_
-
-Caso não seja, verifique o endereço listado em seu terminal após o comando anterior.
-
-✔ O Player será renderizado com um vídeo de teste. Se este estiver indisponível, altere no arquivo _example/index.js_ a propriedade _src_
-do componente para um endereço válido.
+>
+> Servidor de testes local removido temporariamente. ⚠️
+>
 
 Para fazer o build, execute
 

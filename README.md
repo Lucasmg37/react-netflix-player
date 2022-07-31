@@ -383,8 +383,8 @@ Em pouco tempo você será retornado.
 
 ## ✌️ Contribuidores
 
-| [<img src="https://avatars3.githubusercontent.com/u/38473739?s=115" width="115"><br><small>@Prophetaa</small>](https://github.com/Prophetaa) | [<img src="https://avatars0.githubusercontent.com/u/32423942?s=115"><br><sub>@lfoliveir4</sub>](https://github.com/lfoliveir4) | [<img src="https://avatars0.githubusercontent.com/u/49363242?s=115"><br><sub>@romilodev</sub>](https://github.com/romilodev) |
-| :------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars3.githubusercontent.com/u/38473739?s=115" width="115"><br><small>@Prophetaa</small>](https://github.com/Prophetaa) | [<img src="https://avatars0.githubusercontent.com/u/32423942?s=115"><br><sub>@lfoliveir4</sub>](https://github.com/lfoliveir4) | [<img src="https://avatars0.githubusercontent.com/u/49363242?s=115"><br><sub>@romilodev</sub>](https://github.com/romilodev) | [<img src="https://avatars0.githubusercontent.com/u/1103336?s=115"><br><sub>@ridhwaans</sub>](https://github.com/ridhwaans) |
+| :------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | 
 
 ## 📝 Licença
 

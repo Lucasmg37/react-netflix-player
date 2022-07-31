@@ -75,7 +75,7 @@ ou
 
 Após realize o _import_ do componente no arquivo que deseja adicionar o player
 
-`import ReactNetflixPlayer from "react-netflix-player"`
+`import { ReactNetflixPlayer } from "react-netflix-player"`
 
 Pronto, seu componente já está pronto para ser utililado, basta criá-lo em seu arquivo.
 
